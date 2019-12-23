@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SchoolSystem
 {
-    public partial class Form1 : Form 
+    public partial class Form1 : Form
     {
-         List<Student> students = new List<Student>(); 
+        List<Student> students = new List<Student>();
         public Form1()
         {
             InitializeComponent();
@@ -20,8 +20,8 @@ namespace SchoolSystem
 
         private void addStudentButton_Click(object sender, EventArgs e)
         {
-           string name = firstnametBox.Text +" "+ lastnameBox.Text;
-            Student s = new Student(name,emailBox.Text,persNrBox.Text);
+            string name = firstnametBox.Text + " " + lastnameBox.Text;
+            Student s = new Student(name, emailBox.Text, persNrBox.Text);
             students.Add(s);
             firstnametBox.Clear();
             lastnameBox.Clear();
@@ -29,36 +29,26 @@ namespace SchoolSystem
             persNrBox.Clear();
 
             listViewStudents.Items.Clear();
-
-            string[] rad = s.listaAttPrinta(students);
-
+            
             foreach (Student item in students)
             {
-                var listView = new ListViewItem(rad)
-                {
-                    Tag = item
-                };
+                var listView = new ListViewItem(item.listaAttPrinta());
+                //{
+                //    Tag = item
+                //};
                 listViewStudents.Items.Add(listView);
 
             }
-            //    foreach (Student item in students)
-            //    {
-            //        var rad = new string[] { item.StudentID.ToString(), item.Name, item.Email, item.PersonNummer };
-            //        var listVW = new ListViewItem(rad);
-            //        listVW.Tag = item;
-            //        listViewStudents.Items.Add(listVW);
-            //    }
-
         }
 
         private void StudentIdBox_TextChanged(object sender, EventArgs e)
         {
-       
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-          
+
 
         }
 
