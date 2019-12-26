@@ -9,11 +9,10 @@ namespace SchoolSystem
     class Student : Person
     {
         private int StudentID { get; set; }
-        // public List<Student> studenter = new List<Student>();
 
         public Student(string name, string email, string personNummer)
         {
-            StudentID = new Random().Next(1, 1000);
+            StudentID = new Random().Next(1, 8500);
             this.Name = name;
             this.Email = email;
             this.PersonNummer = personNummer;
@@ -23,9 +22,8 @@ namespace SchoolSystem
         //    return $"{ this.StudentID }\n{this.Name}\n{this.Email}\n{this.PersonNummer}";
 
         //}
-        public string[] listaAttPrinta()
+        public override string[] ListaAttPrinta()
         {
-
             var rad = new string[] { StudentID.ToString(), Name, Email, PersonNummer };
             return rad;
         }

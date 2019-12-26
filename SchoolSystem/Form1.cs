@@ -12,7 +12,9 @@ namespace SchoolSystem
 {
     public partial class Form1 : Form
     {
+
         List<Student> students = new List<Student>();
+
         public Form1()
         {
             InitializeComponent();
@@ -20,25 +22,27 @@ namespace SchoolSystem
 
         private void addStudentButton_Click(object sender, EventArgs e)
         {
-            string name = firstnametBox.Text + " " + lastnameBox.Text;
-            Student s = new Student(name, emailBox.Text, persNrBox.Text);
+            string name = SfirstnameBox.Text + " " + SlastnameBox.Text;
+            Student s = new Student(name, SemailBox.Text, SpersNrBox.Text);
             students.Add(s);
-            firstnametBox.Clear();
-            lastnameBox.Clear();
-            emailBox.Clear();
-            persNrBox.Clear();
+            SfirstnameBox.Clear();
+            SlastnameBox.Clear();
+            SemailBox.Clear();
+            SpersNrBox.Clear();
 
             listViewStudents.Items.Clear();
-            
+
             foreach (Student item in students)
             {
-                var listView = new ListViewItem(item.listaAttPrinta());
-                //{
-                //    Tag = item
-                //};
+                var listView = new ListViewItem(item.ListaAttPrinta());
+                {
+                    Tag = item;
+
+                }
                 listViewStudents.Items.Add(listView);
 
             }
+
         }
 
         private void StudentIdBox_TextChanged(object sender, EventArgs e)
@@ -54,6 +58,12 @@ namespace SchoolSystem
         private void listView2_SelectedIndexChanged(object sender, EventArgs e)
         {
             MessageBox.Show("hejhej");
+        }
+
+        private void buttonCloseForm1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Owner.Show();
         }
     }
 }

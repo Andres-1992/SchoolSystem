@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.addStudentButton = new System.Windows.Forms.Button();
-            this.emailBox = new System.Windows.Forms.TextBox();
-            this.persNrBox = new System.Windows.Forms.TextBox();
-            this.lastnameBox = new System.Windows.Forms.TextBox();
+            this.SemailBox = new System.Windows.Forms.TextBox();
+            this.SpersNrBox = new System.Windows.Forms.TextBox();
+            this.SlastnameBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -40,68 +40,76 @@
             this.chNamn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chMail = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chPersNr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.firstnametBox = new System.Windows.Forms.TextBox();
+            this.SfirstnameBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.buttonCloseForm1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // addStudentButton
             // 
-            this.addStudentButton.Location = new System.Drawing.Point(332, 165);
+            this.addStudentButton.Location = new System.Drawing.Point(495, 272);
+            this.addStudentButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.addStudentButton.Name = "addStudentButton";
-            this.addStudentButton.Size = new System.Drawing.Size(75, 23);
+            this.addStudentButton.Size = new System.Drawing.Size(112, 35);
             this.addStudentButton.TabIndex = 5;
             this.addStudentButton.Text = "Lägg till";
             this.addStudentButton.UseVisualStyleBackColor = true;
             this.addStudentButton.Click += new System.EventHandler(this.addStudentButton_Click);
             // 
-            // emailBox
+            // SemailBox
             // 
-            this.emailBox.Location = new System.Drawing.Point(101, 139);
-            this.emailBox.Name = "emailBox";
-            this.emailBox.Size = new System.Drawing.Size(306, 20);
-            this.emailBox.TabIndex = 4;
-            this.emailBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.SemailBox.Location = new System.Drawing.Point(149, 232);
+            this.SemailBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.SemailBox.Name = "SemailBox";
+            this.SemailBox.Size = new System.Drawing.Size(457, 26);
+            this.SemailBox.TabIndex = 4;
+            this.SemailBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // persNrBox
+            // SpersNrBox
             // 
-            this.persNrBox.Location = new System.Drawing.Point(101, 113);
-            this.persNrBox.Name = "persNrBox";
-            this.persNrBox.Size = new System.Drawing.Size(306, 20);
-            this.persNrBox.TabIndex = 3;
-            this.persNrBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.SpersNrBox.Location = new System.Drawing.Point(149, 192);
+            this.SpersNrBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.SpersNrBox.Name = "SpersNrBox";
+            this.SpersNrBox.Size = new System.Drawing.Size(457, 26);
+            this.SpersNrBox.TabIndex = 3;
+            this.SpersNrBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // lastnameBox
+            // SlastnameBox
             // 
-            this.lastnameBox.Location = new System.Drawing.Point(101, 87);
-            this.lastnameBox.Name = "lastnameBox";
-            this.lastnameBox.Size = new System.Drawing.Size(306, 20);
-            this.lastnameBox.TabIndex = 2;
-            this.lastnameBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.SlastnameBox.Location = new System.Drawing.Point(149, 152);
+            this.SlastnameBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.SlastnameBox.Name = "SlastnameBox";
+            this.SlastnameBox.Size = new System.Drawing.Size(457, 26);
+            this.SlastnameBox.TabIndex = 2;
+            this.SlastnameBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(18, 64);
+            this.label2.Location = new System.Drawing.Point(24, 116);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(51, 20);
             this.label2.TabIndex = 6;
             this.label2.Text = "Namn";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(18, 146);
+            this.label3.Location = new System.Drawing.Point(24, 243);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(32, 13);
+            this.label3.Size = new System.Drawing.Size(48, 20);
             this.label3.TabIndex = 7;
             this.label3.Text = "Email";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(18, 120);
+            this.label4.Location = new System.Drawing.Point(24, 203);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 13);
+            this.label4.Size = new System.Drawing.Size(117, 20);
             this.label4.TabIndex = 8;
             this.label4.Text = "Personnummer";
             // 
@@ -115,9 +123,10 @@
             this.listViewStudents.FullRowSelect = true;
             this.listViewStudents.GridLines = true;
             this.listViewStudents.HideSelection = false;
-            this.listViewStudents.Location = new System.Drawing.Point(21, 208);
+            this.listViewStudents.Location = new System.Drawing.Point(29, 317);
+            this.listViewStudents.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.listViewStudents.Name = "listViewStudents";
-            this.listViewStudents.Size = new System.Drawing.Size(492, 374);
+            this.listViewStudents.Size = new System.Drawing.Size(736, 573);
             this.listViewStudents.TabIndex = 10;
             this.listViewStudents.UseCompatibleStateImageBehavior = false;
             this.listViewStudents.View = System.Windows.Forms.View.Details;
@@ -146,39 +155,55 @@
             this.chPersNr.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.chPersNr.Width = 160;
             // 
-            // firstnametBox
+            // SfirstnameBox
             // 
-            this.firstnametBox.Location = new System.Drawing.Point(101, 61);
-            this.firstnametBox.Name = "firstnametBox";
-            this.firstnametBox.Size = new System.Drawing.Size(306, 20);
-            this.firstnametBox.TabIndex = 1;
-            this.firstnametBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.SfirstnameBox.Location = new System.Drawing.Point(149, 112);
+            this.SfirstnameBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.SfirstnameBox.Name = "SfirstnameBox";
+            this.SfirstnameBox.Size = new System.Drawing.Size(457, 26);
+            this.SfirstnameBox.TabIndex = 1;
+            this.SfirstnameBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 90);
+            this.label1.Location = new System.Drawing.Point(24, 156);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.Size = new System.Drawing.Size(84, 20);
             this.label1.TabIndex = 12;
             this.label1.Text = "Efternamn";
             // 
+            // buttonCloseForm1
+            // 
+            this.buttonCloseForm1.Location = new System.Drawing.Point(29, 32);
+            this.buttonCloseForm1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonCloseForm1.Name = "buttonCloseForm1";
+            this.buttonCloseForm1.Size = new System.Drawing.Size(112, 35);
+            this.buttonCloseForm1.TabIndex = 13;
+            this.buttonCloseForm1.Text = "Close";
+            this.buttonCloseForm1.UseVisualStyleBackColor = true;
+            this.buttonCloseForm1.Click += new System.EventHandler(this.buttonCloseForm1_Click);
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(529, 601);
+            this.ClientSize = new System.Drawing.Size(794, 925);
+            this.Controls.Add(this.buttonCloseForm1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.firstnametBox);
+            this.Controls.Add(this.SfirstnameBox);
             this.Controls.Add(this.listViewStudents);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.lastnameBox);
-            this.Controls.Add(this.persNrBox);
-            this.Controls.Add(this.emailBox);
+            this.Controls.Add(this.SlastnameBox);
+            this.Controls.Add(this.SpersNrBox);
+            this.Controls.Add(this.SemailBox);
             this.Controls.Add(this.addStudentButton);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
@@ -189,9 +214,9 @@
         #endregion
 
         private System.Windows.Forms.Button addStudentButton;
-        private System.Windows.Forms.TextBox emailBox;
-        private System.Windows.Forms.TextBox persNrBox;
-        private System.Windows.Forms.TextBox lastnameBox;
+        private System.Windows.Forms.TextBox SemailBox;
+        private System.Windows.Forms.TextBox SpersNrBox;
+        private System.Windows.Forms.TextBox SlastnameBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -199,9 +224,10 @@
         private System.Windows.Forms.ColumnHeader chID;
         private System.Windows.Forms.ColumnHeader chNamn;
         private System.Windows.Forms.ColumnHeader chMail;
-        private System.Windows.Forms.TextBox firstnametBox;
+        private System.Windows.Forms.TextBox SfirstnameBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ColumnHeader chPersNr;
+        private System.Windows.Forms.Button buttonCloseForm1;
     }
 }
 
