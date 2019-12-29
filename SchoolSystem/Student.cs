@@ -17,17 +17,16 @@ namespace SchoolSystem
             this.Email = email;
             this.PersonNummer = personNummer;
         }
-        //public string PrintID()
-        //{
-        //    return $"{ this.StudentID }\n{this.Name}\n{this.Email}\n{this.PersonNummer}";
 
-        //}
         public override string[] ListaAttPrinta()
         {
             var rad = new string[] { StudentID.ToString(), Name, Email, PersonNummer };
             return rad;
         }
 
-
+        public override string PrintInfo()
+        {
+           return $"{ this.StudentID }\n{this.Name}\n{this.Email}\n{this.PersonNummer}"; 
+        }
     }
 }

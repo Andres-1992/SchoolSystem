@@ -19,3 +19,5 @@ C:\Users\tyro0\Desktop\SchoolSystem\SchoolSystem\obj\Debug\SchoolSystem.exe
 C:\Users\tyro0\Desktop\SchoolSystem\SchoolSystem\obj\Debug\SchoolSystem.pdb
 C:\Users\tyro0\source\repos\SchoolSystem\SchoolSystem\obj\Debug\SchoolSystem.Form2.resources
 C:\Users\tyro0\source\repos\SchoolSystem\SchoolSystem\obj\Debug\SchoolSystem.Form3.resources
+C:\Users\tyro0\Desktop\SchoolSystem\SchoolSystem\obj\Debug\SchoolSystem.Form2.resources
+C:\Users\tyro0\Desktop\SchoolSystem\SchoolSystem\obj\Debug\SchoolSystem.Form3.resources

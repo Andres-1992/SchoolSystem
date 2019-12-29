@@ -24,5 +24,10 @@ namespace SchoolSystem
             var rad = new string[] { TeacherID.ToString(), Name, Email, PersonNummer, Salary.ToString() };
             return rad;
         }
+
+        public override string PrintInfo()
+        {
+            return $"{ this.TeacherID }\n{this.Name}\n{this.Email}\n{this.PersonNummer}\n{this.Salary}";
+        }
     }
 }

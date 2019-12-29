@@ -35,10 +35,7 @@ namespace SchoolSystem
             foreach (Student item in students)
             {
                 var listView = new ListViewItem(item.ListaAttPrinta());
-                {
-                    Tag = item;
-
-                }
+                listView.Tag = item;
                 listViewStudents.Items.Add(listView);
 
             }
@@ -52,12 +49,24 @@ namespace SchoolSystem
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+    
         }
 
         private void listView2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            MessageBox.Show("hejhej");
+            try
+            {
+                Student selectedItem = (Student)listViewStudents.SelectedItems[0].Tag;
+                if (selectedItem!=null)
+                {
+                   MessageBox.Show( selectedItem.PrintInfo(), "Onödig information", MessageBoxButtons.OK , MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception)
+            {
+
+               
+            }
         }
 
         private void buttonCloseForm1_Click(object sender, EventArgs e)
