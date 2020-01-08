@@ -6,13 +6,21 @@ using System.Threading.Tasks;
 
 namespace SchoolSystem
 {
-    class Teacher : Person, IPerson
+   public class Teacher : Person, IPerson
     {
+        private static List<bool> UsedCounter = new List<bool>();
         private int TeacherID { get; set; }
         private int Salary { get; set; }
         public Teacher(string name, string email, string personnummer, int salary)
         {
-            TeacherID = new Random().Next(9000, 10000);
+            int nextIndex = -1;
+            if (nextIndex == -1)
+            {
+                nextIndex = UsedCounter.Count;
+                UsedCounter.Add(true);
+            }
+
+            TeacherID = nextIndex;
             this.Name = name;
             this.Email = email;
             this.PersonNummer = personnummer;

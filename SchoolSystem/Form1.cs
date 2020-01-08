@@ -15,6 +15,11 @@ namespace SchoolSystem
 
         List<Student> students = new List<Student>();
 
+        public void SetAllPeople( List<Student> s)
+        {
+            students = s;
+        }
+
         public Form1()
         {
             InitializeComponent();

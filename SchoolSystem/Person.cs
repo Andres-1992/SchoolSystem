@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SchoolSystem
 {
-    abstract class Person 
+    public abstract class Person 
     {
         protected string Name { get; set; }
         protected string Email { get; set; }

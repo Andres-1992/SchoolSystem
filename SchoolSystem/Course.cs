@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SchoolSystem
 {
-    class Course
+   public class Course
     {
         private int KursID { get; set; }
         private string Name { get; set; }
@@ -16,20 +16,21 @@ namespace SchoolSystem
 
         public Course(string name, int durationInWeeks)
         {
-            KursID = new Random().Next(5, 9888);
+            KursID = new Random().Next(201,300 );
             this.Name = name;
             this.DurationInWeeks = durationInWeeks;
         }
-        void AddStudent(Student s)
+        void AddStudentToCourse(Student s)
 
         {
+            
             if (!s.Equals(null))
             {
                 Students.Add(s);
             }
 
         }
-        void AddTeacher(Teacher t)
+        void AddTeacherToCourse(Teacher t)
         {
             if (!t.Equals(null))
             {

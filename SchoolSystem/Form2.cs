@@ -17,7 +17,7 @@ namespace SchoolSystem
         {
             InitializeComponent();
         }
-
+         List<Student> studenter = new List<Student>();
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close();
@@ -26,10 +26,12 @@ namespace SchoolSystem
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-
+          
             if (frm1 == null)
             {
+                
                 frm1 = new Form1();
+                frm1.SetAllPeople(studenter);
             }
             frm1.Show(this);           
         }

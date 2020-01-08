@@ -6,17 +6,34 @@ using System.Threading.Tasks;
 
 namespace SchoolSystem
 {
-    class Student : Person, IPerson
+   public class Student : Person, IPerson
     {
+        private static List<bool> UsedCounter = new List<bool>();
         private int StudentID { get; set; }
 
         public Student(string name, string email, string personNummer)
-        {
-            StudentID = new Random().Next(1, 8500);
+        {    
+                int nextIndex = -1;
+                if (nextIndex == -1)
+                {
+                    nextIndex = UsedCounter.Count;
+                    UsedCounter.Add(true);
+                }
+
+                StudentID = nextIndex;
+            
+            
             this.Name = name;
             this.Email = email;
             this.PersonNummer = personNummer;
         }
+
+
+
+
+
+
+
 
         public string[] ListaAttPrinta()
         {
