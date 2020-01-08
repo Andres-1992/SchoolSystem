@@ -18,7 +18,7 @@ namespace SchoolSystem
 			InitializeComponent();
 		}
 
-		private void buttonCloseForm1_Click(object sender, EventArgs e)
+		private void buttonCloseForm2_Click(object sender, EventArgs e)
 		{
 			this.Hide();
 			Owner.Show();

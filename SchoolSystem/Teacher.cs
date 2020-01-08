@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace SchoolSystem
 {
    public class Teacher : Person, IPerson
-    {
+   {
         private static List<bool> UsedCounter = new List<bool>();
         private int TeacherID { get; set; }
         private int Salary { get; set; }
@@ -32,12 +32,9 @@ namespace SchoolSystem
             var rad = new string[] { TeacherID.ToString(), Name, Email, PersonNummer, Salary.ToString() };
             return rad;
         }
-
         public string PrintInfo()
         {
             return $"{this.TeacherID }\n{this.Name}\n{this.Email}\n{this.PersonNummer}\n{this.Salary}";
         }
-
-
-    }
+   }
 }

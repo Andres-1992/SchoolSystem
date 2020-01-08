@@ -12,43 +12,73 @@ namespace SchoolSystem
 {
     public partial class Form2 : Form
     {
-        Form1 frm1;
+
+        List<Student> students = new List<Student>();
+
+        public void SetAllPeople( List<Student> s)
+        {
+            students = s;
+        }
+
         public Form2()
         {
             InitializeComponent();
         }
-         List<Student> studenter = new List<Student>();
-        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
+
+        private void addStudentButton_Click(object sender, EventArgs e)
         {
-            Close();
+            string name = SfirstnameBox.Text + " " + SlastnameBox.Text;
+            Student s = new Student(name, SemailBox.Text, SpersNrBox.Text);
+            students.Add(s);
+            SfirstnameBox.Clear();
+            SlastnameBox.Clear();
+            SemailBox.Clear();
+            SpersNrBox.Clear();
+
+            listViewStudents.Items.Clear();
+
+            foreach (Student item in students)
+            {
+                var listView = new ListViewItem(item.ListaAttPrinta());
+                listView.Tag = item;
+                listViewStudents.Items.Add(listView);
+
+            }
+
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void StudentIdBox_TextChanged(object sender, EventArgs e)
         {
-            this.Hide();
-          
-            if (frm1 == null)
-            {
-                
-                frm1 = new Form1();
-                frm1.SetAllPeople(studenter);
-            }
-            frm1.Show(this);           
+
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
-
+    
         }
-        Form3 frm3;
-        private void buttonTeacher_Click(object sender, EventArgs e)
+
+        private void listView2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Student selectedItem = (Student)listViewStudents.SelectedItems[0].Tag;
+                if (selectedItem!=null)
+                {
+                   MessageBox.Show( selectedItem.PrintInfo(), "Onödig information", MessageBoxButtons.OK , MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception)
+            {
+
+               
+            }
+        }
+
+        private void buttonCloseForm2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            if (frm3 == null)
-            {
-                frm3 = new Form3();
-            }
-            frm3.Show(this);        
+            Owner.Show();
         }
     }
 }
+

@@ -12,73 +12,43 @@ namespace SchoolSystem
 {
     public partial class Form1 : Form
     {
-
-        List<Student> students = new List<Student>();
-
-        public void SetAllPeople( List<Student> s)
-        {
-            students = s;
-        }
-
+        Form2 frm2;
         public Form1()
         {
             InitializeComponent();
         }
-
-        private void addStudentButton_Click(object sender, EventArgs e)
+         List<Student> studenter = new List<Student>();
+        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string name = SfirstnameBox.Text + " " + SlastnameBox.Text;
-            Student s = new Student(name, SemailBox.Text, SpersNrBox.Text);
-            students.Add(s);
-            SfirstnameBox.Clear();
-            SlastnameBox.Clear();
-            SemailBox.Clear();
-            SpersNrBox.Clear();
-
-            listViewStudents.Items.Clear();
-
-            foreach (Student item in students)
-            {
-                var listView = new ListViewItem(item.ListaAttPrinta());
-                listView.Tag = item;
-                listViewStudents.Items.Add(listView);
-
-            }
-
+            Close();
         }
 
-        private void StudentIdBox_TextChanged(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+          
+            if (frm2 == null)
+            {
+                
+                frm2= new Form2();
+                frm2.SetAllPeople(studenter);
+            }
+            frm2.Show(this);           
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-    
+
         }
-
-        private void listView2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                Student selectedItem = (Student)listViewStudents.SelectedItems[0].Tag;
-                if (selectedItem!=null)
-                {
-                   MessageBox.Show( selectedItem.PrintInfo(), "Onödig information", MessageBoxButtons.OK , MessageBoxIcon.Information);
-                }
-            }
-            catch (Exception)
-            {
-
-               
-            }
-        }
-
-        private void buttonCloseForm1_Click(object sender, EventArgs e)
+        Form3 frm3;
+        private void buttonTeacher_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Owner.Show();
+            if (frm3 == null)
+            {
+                frm3 = new Form3();
+            }
+            frm3.Show(this);        
         }
     }
 }
-

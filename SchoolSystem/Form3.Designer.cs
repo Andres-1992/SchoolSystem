@@ -57,7 +57,7 @@
             this.buttonCloseForm1.TabIndex = 24;
             this.buttonCloseForm1.Text = "Close";
             this.buttonCloseForm1.UseVisualStyleBackColor = true;
-            this.buttonCloseForm1.Click += new System.EventHandler(this.buttonCloseForm1_Click);
+            this.buttonCloseForm1.Click += new System.EventHandler(this.buttonCloseForm2_Click);
             // 
             // lastnamelabel
             // 
