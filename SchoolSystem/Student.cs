@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SchoolSystem
 {
-    class Student : Person
+    class Student : Person, IPerson
     {
         private int StudentID { get; set; }
 
@@ -18,15 +18,15 @@ namespace SchoolSystem
             this.PersonNummer = personNummer;
         }
 
-        public override string[] ListaAttPrinta()
+        public string[] ListaAttPrinta()
         {
             var rad = new string[] { StudentID.ToString(), Name, Email, PersonNummer };
             return rad;
         }
 
-        public override string PrintInfo()
+        public string PrintInfo()
         {
-           return $"{ this.StudentID }\n{this.Name}\n{this.Email}\n{this.PersonNummer}"; 
+            return $"{ this.StudentID }\n{this.Name}\n{this.Email}\n{this.PersonNummer}";
         }
     }
 }

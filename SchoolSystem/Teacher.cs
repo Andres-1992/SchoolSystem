@@ -6,28 +6,30 @@ using System.Threading.Tasks;
 
 namespace SchoolSystem
 {
-    class Teacher: Person
+    class Teacher : Person, IPerson
     {
         private int TeacherID { get; set; }
         private int Salary { get; set; }
-        public Teacher(string name, string email, string personnummer,int salary)
+        public Teacher(string name, string email, string personnummer, int salary)
         {
             TeacherID = new Random().Next(9000, 10000);
             this.Name = name;
             this.Email = email;
             this.PersonNummer = personnummer;
             this.Salary = salary;
-            
+
         }
-        public override string[] ListaAttPrinta()
+        public string[] ListaAttPrinta()
         {
             var rad = new string[] { TeacherID.ToString(), Name, Email, PersonNummer, Salary.ToString() };
             return rad;
         }
 
-        public override string PrintInfo()
+        public string PrintInfo()
         {
-            return $"{ this.TeacherID }\n{this.Name}\n{this.Email}\n{this.PersonNummer}\n{this.Salary}";
+            return $"{this.TeacherID }\n{this.Name}\n{this.Email}\n{this.PersonNummer}\n{this.Salary}";
         }
+
+
     }
 }

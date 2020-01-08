@@ -20,5 +20,21 @@ namespace SchoolSystem
             this.Name = name;
             this.DurationInWeeks = durationInWeeks;
         }
+        void AddStudent(Student s)
+
+        {
+            if (!s.Equals(null))
+            {
+                Students.Add(s);
+            }
+
+        }
+        void AddTeacher(Teacher t)
+        {
+            if (!t.Equals(null))
+            {
+            TeacherTeam.Add(t);
+            }
+        }
     }
 }
