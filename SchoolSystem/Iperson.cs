@@ -10,5 +10,6 @@ namespace SchoolSystem
     {
         string[] ListaAttPrinta();
         string PrintInfo();
+        int GetID();
     }
 }

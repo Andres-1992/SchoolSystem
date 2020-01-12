@@ -36,5 +36,10 @@ namespace SchoolSystem
         {
             return $"{this.TeacherID }\n{this.Name}\n{this.Email}\n{this.PersonNummer}\n{this.Salary}";
         }
-   }
+
+        public int GetID()
+        {
+            return TeacherID;
+        }
+    }
 }

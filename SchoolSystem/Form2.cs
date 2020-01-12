@@ -12,19 +12,15 @@ namespace SchoolSystem
 {
     public partial class Form2 : Form
     {
-
         List<Student> students = new List<Student>();
-
-        public void SetAllPeople( List<Student> s)
+        public void SetAllStudents(List<Student> s)
         {
             students = s;
         }
-
         public Form2()
         {
             InitializeComponent();
         }
-
         private void addStudentButton_Click(object sender, EventArgs e)
         {
             string name = SfirstnameBox.Text + " " + SlastnameBox.Text;
@@ -42,42 +38,36 @@ namespace SchoolSystem
                 var listView = new ListViewItem(item.ListaAttPrinta());
                 listView.Tag = item;
                 listViewStudents.Items.Add(listView);
-
             }
 
         }
-
-        private void StudentIdBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form2_Load(object sender, EventArgs e)
-        {
-    
-        }
-
-        private void listView2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                Student selectedItem = (Student)listViewStudents.SelectedItems[0].Tag;
-                if (selectedItem!=null)
-                {
-                   MessageBox.Show( selectedItem.PrintInfo(), "Onödig information", MessageBoxButtons.OK , MessageBoxIcon.Information);
-                }
-            }
-            catch (Exception)
-            {
-
-               
-            }
-        }
-
         private void buttonCloseForm2_Click(object sender, EventArgs e)
         {
             this.Hide();
             Owner.Show();
+        }
+
+        private void deleteStudentButton_Click(object sender, EventArgs e)
+        {
+            foreach (Student item in students)
+            {
+                if (item.GetID()==int.Parse(IDbox.Text))
+                {
+                    students.Remove(item);
+                    break;
+                }
+
+            }
+
+            listViewStudents.Items.Clear();
+
+            foreach (Student s in students)
+            {
+                var listView = new ListViewItem(s.ListaAttPrinta());
+                listView.Tag = s;
+                listViewStudents.Items.Add(listView);
+
+            }
         }
     }
 }

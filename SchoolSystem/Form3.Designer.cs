@@ -46,14 +46,16 @@
             this.chPersNr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chSalary = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.listViewTeachers = new System.Windows.Forms.ListView();
+            this.deleteTeacherButton = new System.Windows.Forms.Button();
+            this.ID = new System.Windows.Forms.Label();
+            this.IDbox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // buttonCloseForm1
             // 
-            this.buttonCloseForm1.Location = new System.Drawing.Point(42, 17);
-            this.buttonCloseForm1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonCloseForm1.Location = new System.Drawing.Point(28, 11);
             this.buttonCloseForm1.Name = "buttonCloseForm1";
-            this.buttonCloseForm1.Size = new System.Drawing.Size(112, 35);
+            this.buttonCloseForm1.Size = new System.Drawing.Size(75, 23);
             this.buttonCloseForm1.TabIndex = 24;
             this.buttonCloseForm1.Text = "Close";
             this.buttonCloseForm1.UseVisualStyleBackColor = true;
@@ -62,85 +64,76 @@
             // lastnamelabel
             // 
             this.lastnamelabel.AutoSize = true;
-            this.lastnamelabel.Location = new System.Drawing.Point(38, 143);
-            this.lastnamelabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lastnamelabel.Location = new System.Drawing.Point(25, 93);
             this.lastnamelabel.Name = "lastnamelabel";
-            this.lastnamelabel.Size = new System.Drawing.Size(84, 20);
+            this.lastnamelabel.Size = new System.Drawing.Size(55, 13);
             this.lastnamelabel.TabIndex = 23;
             this.lastnamelabel.Text = "Efternamn";
             // 
             // TfirstnameBox
             // 
-            this.TfirstnameBox.Location = new System.Drawing.Point(162, 97);
-            this.TfirstnameBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TfirstnameBox.Location = new System.Drawing.Point(108, 63);
             this.TfirstnameBox.Name = "TfirstnameBox";
-            this.TfirstnameBox.Size = new System.Drawing.Size(457, 26);
+            this.TfirstnameBox.Size = new System.Drawing.Size(306, 20);
             this.TfirstnameBox.TabIndex = 14;
             this.TfirstnameBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // personNrlabel
             // 
             this.personNrlabel.AutoSize = true;
-            this.personNrlabel.Location = new System.Drawing.Point(40, 183);
-            this.personNrlabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.personNrlabel.Location = new System.Drawing.Point(27, 119);
             this.personNrlabel.Name = "personNrlabel";
-            this.personNrlabel.Size = new System.Drawing.Size(117, 20);
+            this.personNrlabel.Size = new System.Drawing.Size(77, 13);
             this.personNrlabel.TabIndex = 21;
             this.personNrlabel.Text = "Personnummer";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(40, 223);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(27, 145);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 20);
+            this.label3.Size = new System.Drawing.Size(32, 13);
             this.label3.TabIndex = 20;
             this.label3.Text = "Email";
             // 
             // firstNamelabel
             // 
             this.firstNamelabel.AutoSize = true;
-            this.firstNamelabel.Location = new System.Drawing.Point(40, 103);
-            this.firstNamelabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.firstNamelabel.Location = new System.Drawing.Point(27, 67);
             this.firstNamelabel.Name = "firstNamelabel";
-            this.firstNamelabel.Size = new System.Drawing.Size(51, 20);
+            this.firstNamelabel.Size = new System.Drawing.Size(35, 13);
             this.firstNamelabel.TabIndex = 19;
             this.firstNamelabel.Text = "Namn";
             // 
             // TlastnameBox
             // 
-            this.TlastnameBox.Location = new System.Drawing.Point(162, 137);
-            this.TlastnameBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TlastnameBox.Location = new System.Drawing.Point(108, 89);
             this.TlastnameBox.Name = "TlastnameBox";
-            this.TlastnameBox.Size = new System.Drawing.Size(457, 26);
+            this.TlastnameBox.Size = new System.Drawing.Size(306, 20);
             this.TlastnameBox.TabIndex = 15;
             this.TlastnameBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // TpersNrBox
             // 
-            this.TpersNrBox.Location = new System.Drawing.Point(162, 177);
-            this.TpersNrBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TpersNrBox.Location = new System.Drawing.Point(108, 115);
             this.TpersNrBox.Name = "TpersNrBox";
-            this.TpersNrBox.Size = new System.Drawing.Size(457, 26);
+            this.TpersNrBox.Size = new System.Drawing.Size(306, 20);
             this.TpersNrBox.TabIndex = 16;
             this.TpersNrBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // TemailBox
             // 
-            this.TemailBox.Location = new System.Drawing.Point(162, 217);
-            this.TemailBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TemailBox.Location = new System.Drawing.Point(108, 141);
             this.TemailBox.Name = "TemailBox";
-            this.TemailBox.Size = new System.Drawing.Size(457, 26);
+            this.TemailBox.Size = new System.Drawing.Size(306, 20);
             this.TemailBox.TabIndex = 17;
             this.TemailBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // addTeacherButton
             // 
-            this.addTeacherButton.Location = new System.Drawing.Point(507, 289);
-            this.addTeacherButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.addTeacherButton.Location = new System.Drawing.Point(338, 188);
             this.addTeacherButton.Name = "addTeacherButton";
-            this.addTeacherButton.Size = new System.Drawing.Size(112, 35);
+            this.addTeacherButton.Size = new System.Drawing.Size(75, 23);
             this.addTeacherButton.TabIndex = 19;
             this.addTeacherButton.Text = "Lägg till";
             this.addTeacherButton.UseVisualStyleBackColor = true;
@@ -149,19 +142,17 @@
             // salarylabel
             // 
             this.salarylabel.AutoSize = true;
-            this.salarylabel.Location = new System.Drawing.Point(40, 259);
-            this.salarylabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.salarylabel.Location = new System.Drawing.Point(27, 168);
             this.salarylabel.Name = "salarylabel";
-            this.salarylabel.Size = new System.Drawing.Size(53, 20);
+            this.salarylabel.Size = new System.Drawing.Size(36, 13);
             this.salarylabel.TabIndex = 26;
             this.salarylabel.Text = "Salary";
             // 
             // salaryBox
             // 
-            this.salaryBox.Location = new System.Drawing.Point(162, 253);
-            this.salaryBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.salaryBox.Location = new System.Drawing.Point(108, 164);
             this.salaryBox.Name = "salaryBox";
-            this.salaryBox.Size = new System.Drawing.Size(457, 26);
+            this.salaryBox.Size = new System.Drawing.Size(306, 20);
             this.salaryBox.TabIndex = 18;
             this.salaryBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -204,19 +195,48 @@
             this.listViewTeachers.FullRowSelect = true;
             this.listViewTeachers.GridLines = true;
             this.listViewTeachers.HideSelection = false;
-            this.listViewTeachers.Location = new System.Drawing.Point(7, 334);
-            this.listViewTeachers.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.listViewTeachers.Location = new System.Drawing.Point(5, 217);
             this.listViewTeachers.Name = "listViewTeachers";
-            this.listViewTeachers.Size = new System.Drawing.Size(989, 526);
+            this.listViewTeachers.Size = new System.Drawing.Size(651, 224);
             this.listViewTeachers.TabIndex = 22;
             this.listViewTeachers.UseCompatibleStateImageBehavior = false;
             this.listViewTeachers.View = System.Windows.Forms.View.Details;
             // 
+            // deleteTeacherButton
+            // 
+            this.deleteTeacherButton.Location = new System.Drawing.Point(267, 462);
+            this.deleteTeacherButton.Name = "deleteTeacherButton";
+            this.deleteTeacherButton.Size = new System.Drawing.Size(75, 23);
+            this.deleteTeacherButton.TabIndex = 29;
+            this.deleteTeacherButton.Text = "Ta bort student";
+            this.deleteTeacherButton.UseVisualStyleBackColor = true;
+            this.deleteTeacherButton.Click += new System.EventHandler(this.deleteTeacherButton_Click);
+            // 
+            // ID
+            // 
+            this.ID.AutoSize = true;
+            this.ID.Location = new System.Drawing.Point(25, 472);
+            this.ID.Name = "ID";
+            this.ID.Size = new System.Drawing.Size(61, 13);
+            this.ID.TabIndex = 28;
+            this.ID.Text = "Teacher ID";
+            // 
+            // IDbox
+            // 
+            this.IDbox.Location = new System.Drawing.Point(108, 465);
+            this.IDbox.Name = "IDbox";
+            this.IDbox.Size = new System.Drawing.Size(119, 20);
+            this.IDbox.TabIndex = 27;
+            this.IDbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // Form3
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1002, 874);
+            this.ClientSize = new System.Drawing.Size(668, 568);
+            this.Controls.Add(this.deleteTeacherButton);
+            this.Controls.Add(this.ID);
+            this.Controls.Add(this.IDbox);
             this.Controls.Add(this.salarylabel);
             this.Controls.Add(this.salaryBox);
             this.Controls.Add(this.buttonCloseForm1);
@@ -230,6 +250,7 @@
             this.Controls.Add(this.TpersNrBox);
             this.Controls.Add(this.TemailBox);
             this.Controls.Add(this.addTeacherButton);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form3";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form3";
@@ -259,5 +280,8 @@
         private System.Windows.Forms.ColumnHeader chPersNr;
         private System.Windows.Forms.ColumnHeader chSalary;
         private System.Windows.Forms.ListView listViewTeachers;
+        private System.Windows.Forms.Button deleteTeacherButton;
+        private System.Windows.Forms.Label ID;
+        private System.Windows.Forms.TextBox IDbox;
     }
 }

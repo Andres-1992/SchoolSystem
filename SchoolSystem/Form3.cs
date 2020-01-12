@@ -17,8 +17,12 @@ namespace SchoolSystem
 		{
 			InitializeComponent();
 		}
+        public void SetAllTeachers(List<Teacher> t)
+        {
+            teachers = t;
+        }
 
-		private void buttonCloseForm2_Click(object sender, EventArgs e)
+        private void buttonCloseForm2_Click(object sender, EventArgs e)
 		{
 			this.Hide();
 			Owner.Show();
@@ -52,5 +56,27 @@ namespace SchoolSystem
 		{
 
 		}
-	}
+
+        private void deleteTeacherButton_Click(object sender, EventArgs e)
+        {
+            foreach (Teacher item in teachers)
+            {
+                if (item.GetID() == int.Parse(IDbox.Text))
+                {
+                    teachers.Remove(item);
+                    break;
+                }
+            }
+
+            listViewTeachers.Items.Clear();
+
+            foreach (Teacher t in teachers )
+            {
+                var listView = new ListViewItem(t.ListaAttPrinta());
+                listView.Tag = t;
+                listViewTeachers.Items.Add(listView);
+            }
+            IDbox.Clear();
+        }
+    }
 }

@@ -19,22 +19,15 @@ namespace SchoolSystem
                     nextIndex = UsedCounter.Count;
                     UsedCounter.Add(true);
                 }
-
-                StudentID = nextIndex;
-            
-            
+                StudentID = nextIndex;       
             this.Name = name;
             this.Email = email;
             this.PersonNummer = personNummer;
         }
-
-
-
-
-
-
-
-
+        public int GetID()
+        {
+            return this.StudentID;
+        }
         public string[] ListaAttPrinta()
         {
             var rad = new string[] { StudentID.ToString(), Name, Email, PersonNummer };

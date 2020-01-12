@@ -21,3 +21,5 @@ C:\Users\tyro0\source\repos\SchoolSystem\SchoolSystem\obj\Debug\SchoolSystem.For
 C:\Users\tyro0\source\repos\SchoolSystem\SchoolSystem\obj\Debug\SchoolSystem.Form3.resources
 C:\Users\tyro0\Desktop\SchoolSystem\SchoolSystem\obj\Debug\SchoolSystem.Form3.resources
 C:\Users\tyro0\Desktop\SchoolSystem\SchoolSystem\obj\Debug\SchoolSystem.Form2.resources
+C:\Users\tyro0\Desktop\SchoolSystem\SchoolSystem\obj\Debug\SchoolSystem.Form4.resources
+C:\Users\tyro0\Desktop\SchoolSystem\SchoolSystem\obj\Debug\SchoolSystem.Form5.resources
