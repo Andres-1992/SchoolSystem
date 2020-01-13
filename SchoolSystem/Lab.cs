@@ -19,10 +19,7 @@ namespace SchoolSystem
             this.Kurs = c;
 
         }
-        public void AddCourse(Course c)
-        {
-            Kurs = c;
-        }
+
         public void AddStudentAndBetyg(Student s, string betyg)
         {
             student = s;

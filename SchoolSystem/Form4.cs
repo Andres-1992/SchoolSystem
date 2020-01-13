@@ -51,41 +51,24 @@ namespace SchoolSystem
 
         private void addToCoursebutton_Click(object sender, EventArgs e)
         {
-            foreach  (Course item in courses)
-            {
-                if (item.GetID()==int.Parse(courseIDbox.Text))
-                {
-                    foreach (Student s in students)
-                    {
-                        if (s.GetID()==int.Parse(studentIDbox.Text))
-                        {
-                          item.AddStudentToCourse(s);
-                            break;
-                        }                       
-                    }
-                    foreach (Teacher t in teachers)
-                    {
-                        if (t.GetID()== int.Parse(teacherIDbox.Text))
-                        {
-                            item.AddTeacherToCourse(t);
-                            break;
-                        }
-                    }
-                    break;
-                }
-            }
+            Course c;
+            c = courses.Find(x => (x.GetID().Equals(int.Parse(courseIDbox.Text))));
+
+            Student s;
+            s = students.Find(x => (x.GetID().Equals(int.Parse(studentIDbox.Text))));
+            c.AddStudentToCourse(s);
+
+            Teacher t;
+            t = teachers.Find(x => (x.GetID().Equals(int.Parse(teacherIDbox.Text))));
+            c.AddTeacherToCourse(t);
         }
 
         private void deleteCoursebutton_Click(object sender, EventArgs e)
         {
-            foreach (Course item in courses)
-            {
-                if (item.GetID() == int.Parse(IDbox.Text))
-                {
-                    courses.Remove(item);
-                    break;
-                }
-            }
+            Course c;
+            c = courses.Find(x => (x.GetID().Equals(int.Parse(IDbox.Text))));
+            courses.Remove(c);        
+    
             listViewCourses.Items.Clear();
 
             foreach (Course s in courses)
@@ -98,40 +81,20 @@ namespace SchoolSystem
 
         private void deleteStudentbutton_Click(object sender, EventArgs e)
         {
-            foreach (Course item in courses)
-            {
-                if (item.GetID()==int.Parse(cIDbox1.Text))
-                {
-                    foreach (Student s in students)
-                    {
-                        if (s.GetID()==int.Parse(sIDbox.Text))
-                        {
-                            item.DeleteStudent(s.GetID());
-                            break;
-                        }
-                    }
-                    break;
-                }
-            }
+            Course c;
+            c = courses.Find(x => (x.GetID().Equals(int.Parse(cIDbox1.Text))));
+            Student s;
+            s = students.Find(x => (x.GetID().Equals(int.Parse(sIDbox.Text))));
+            c.DeleteStudent(s);
         }
 
         private void deleteTeacherbutton_Click(object sender, EventArgs e)
         {
-            foreach (Course item in courses)
-            {
-                if (item.GetID() == int.Parse(cIDbox2.Text))
-                {
-                    foreach (Teacher s in teachers)
-                    {
-                        if (s.GetID() == int.Parse(tIDbox.Text))
-                        {
-                            item.DeleteTeacher(s.GetID());
-                            break;
-                        }
-                    }
-                    break;
-                }
-            }
+            Course c;
+            c = courses.Find(x => (x.GetID().Equals(int.Parse(cIDbox2.Text))));
+            Teacher t;
+            t = teachers.Find(x => (x.GetID().Equals(int.Parse(tIDbox.Text))));
+            c.DeleteTeacher(t);
         }
     }
 }

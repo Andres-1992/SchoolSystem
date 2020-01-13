@@ -27,17 +27,11 @@ namespace SchoolSystem
             InitializeComponent();
         }
         private void createLabButton_Click(object sender, EventArgs e)
-        {  
-            foreach (Course item in courses)
-            {
-                if (item.GetID()==int.Parse(textBox2.Text))
-                {
-                    Lab l = new Lab(textBox1.Text,item);
-                    //l.AddCourse(item);
-                    labbar.Add(l);
-                    break;
-                }
-            }                  
+        {
+            Course c;
+            c = courses.Find(x => (x.GetID().Equals(int.Parse(textBox2.Text))));
+            Lab l = new Lab(textBox1.Text, c);
+            labbar.Add(l);
         }
         private void closebutton_Click(object sender, EventArgs e)
         {

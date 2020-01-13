@@ -43,27 +43,17 @@ namespace SchoolSystem
         {
             return KursID;
         }
-        public void DeleteStudent(int ID)
+        public void DeleteStudent(Student s)
         {
-            foreach (Student item in Students)
-            {
-                if (item.GetID()==ID)
-                {
-                    Students.Remove(item);
-                    break;
-                }
-            }
+ 
+         Students.Remove(s);
+
         }
-        public void DeleteTeacher(int ID)
+        public void DeleteTeacher(Teacher t)
         {
-            foreach (Teacher item in TeacherTeam)
-            {
-                if (item.GetID()==ID)
-                {
-                    TeacherTeam.Remove(item);
-                    break;
-                }
-            }
+
+          TeacherTeam.Remove(t);
+
         }
     }
 }

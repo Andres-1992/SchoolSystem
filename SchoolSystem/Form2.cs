@@ -49,24 +49,18 @@ namespace SchoolSystem
 
         private void deleteStudentButton_Click(object sender, EventArgs e)
         {
-            foreach (Student item in students)
-            {
-                if (item.GetID()==int.Parse(IDbox.Text))
-                {
-                    students.Remove(item);
-                    break;
-                }
 
-            }
-
+            Student s;
+            s = students.Find(x => (x.GetID().Equals(int.Parse(IDbox.Text))));
+            students.Remove(s);
+            IDbox.Clear();
             listViewStudents.Items.Clear();
 
-            foreach (Student s in students)
+            foreach (Student item in students)
             {
-                var listView = new ListViewItem(s.ListaAttPrinta());
-                listView.Tag = s;
+                var listView = new ListViewItem(item.ListaAttPrinta());
+                listView.Tag = item;
                 listViewStudents.Items.Add(listView);
-
             }
         }
     }

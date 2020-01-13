@@ -41,42 +41,31 @@ namespace SchoolSystem
 
 			listViewTeachers.Items.Clear();
 			foreach (Teacher item in teachers)
-			{
+            {
 				var listView = new ListViewItem(item.ListaAttPrinta());
-				{
-					Tag = item;
-
-				}
-				listViewTeachers.Items.Add(listView);
-
+                listViewTeachers.Tag = item;
+                listViewTeachers.Items.Add(listView);
 			}
 		}
 
-		private void Form3_Load(object sender, EventArgs e)
-		{
-
-		}
 
         private void deleteTeacherButton_Click(object sender, EventArgs e)
         {
-            foreach (Teacher item in teachers)
-            {
-                if (item.GetID() == int.Parse(IDbox.Text))
-                {
-                    teachers.Remove(item);
-                    break;
-                }
-            }
+
+            Teacher t;
+          
+            t = teachers.Find(x => (x.GetID().Equals(int.Parse(IDbox.Text))));
+            teachers.Remove(t);
 
             listViewTeachers.Items.Clear();
-
-            foreach (Teacher t in teachers )
+            IDbox.Clear();
+            foreach (Teacher item in teachers )
             {
-                var listView = new ListViewItem(t.ListaAttPrinta());
-                listView.Tag = t;
+                var listView = new ListViewItem(item.ListaAttPrinta());
+                listView.Tag = item;
                 listViewTeachers.Items.Add(listView);
             }
-            IDbox.Clear();
+           
         }
     }
 }

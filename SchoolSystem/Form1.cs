@@ -58,8 +58,6 @@ namespace SchoolSystem
             {
                 frm4 = new Form4();
                 frm4.SetAll(studenter,teachers,courses);
-                
-
             }
             frm4.Show(this);
         }
