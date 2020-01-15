@@ -9,7 +9,7 @@ namespace SchoolSystem
     public class Course
     {
         private int KursID { get; set; }
-        private string Name { get; set; }
+        public string Name { get; set; }
         private float HP { get; set; }
         private List<Student> Students = new List<Student>();
         private List<Teacher> TeacherTeam = new List<Teacher>();
@@ -26,6 +26,14 @@ namespace SchoolSystem
             {
                 Students.Add(s);
             }
+        }
+        public List<Student> Getstudent()
+        {
+            return Students;
+        }
+        public List<Teacher> GetTeachers()
+        {
+            return TeacherTeam;
         }
         public string[] ListaKurser()
         {
@@ -45,15 +53,13 @@ namespace SchoolSystem
         }
         public void DeleteStudent(Student s)
         {
- 
-         Students.Remove(s);
-
+            Students.Remove(s);
         }
+
         public void DeleteTeacher(Teacher t)
         {
-
-          TeacherTeam.Remove(t);
-
+            TeacherTeam.Remove(t);
         }
+
     }
 }

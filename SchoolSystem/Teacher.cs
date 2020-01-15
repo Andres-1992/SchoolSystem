@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SchoolSystem
 {
-   public class Teacher : Person, IPerson
+   public class Teacher : Person
    {
         private static List<bool> UsedCounter = new List<bool>();
         private int TeacherID { get; set; }
@@ -27,17 +27,13 @@ namespace SchoolSystem
             this.Salary = salary;
 
         }
-        public string[] ListaAttPrinta()
+        public override string[] ListaAttPrinta()
         {
             var rad = new string[] { TeacherID.ToString(), Name, Email, PersonNummer, Salary.ToString() };
             return rad;
         }
-        public string PrintInfo()
-        {
-            return $"{this.TeacherID }\n{this.Name}\n{this.Email}\n{this.PersonNummer}\n{this.Salary}";
-        }
 
-        public int GetID()
+        public override int GetID()
         {
             return TeacherID;
         }

@@ -52,9 +52,7 @@ namespace SchoolSystem
         private void deleteTeacherButton_Click(object sender, EventArgs e)
         {
 
-            Teacher t;
-          
-            t = teachers.Find(x => (x.GetID().Equals(int.Parse(IDbox.Text))));
+            Teacher t = teachers.Find(x => (x.GetID().Equals(int.Parse(IDbox.Text))));
             teachers.Remove(t);
 
             listViewTeachers.Items.Clear();

@@ -36,7 +36,6 @@ namespace SchoolSystem
             foreach (Student item in students)
             {
                 var listView = new ListViewItem(item.ListaAttPrinta());
-                listView.Tag = item;
                 listViewStudents.Items.Add(listView);
             }
 
@@ -50,8 +49,7 @@ namespace SchoolSystem
         private void deleteStudentButton_Click(object sender, EventArgs e)
         {
 
-            Student s;
-            s = students.Find(x => (x.GetID().Equals(int.Parse(IDbox.Text))));
+            Student s = students.Find(x => (x.GetID().Equals(int.Parse(IDbox.Text))));
             students.Remove(s);
             IDbox.Clear();
             listViewStudents.Items.Clear();
@@ -59,7 +57,6 @@ namespace SchoolSystem
             foreach (Student item in students)
             {
                 var listView = new ListViewItem(item.ListaAttPrinta());
-                listView.Tag = item;
                 listViewStudents.Items.Add(listView);
             }
         }

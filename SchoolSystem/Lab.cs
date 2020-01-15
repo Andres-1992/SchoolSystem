@@ -8,8 +8,8 @@ namespace SchoolSystem
 {
     class Lab
     {
-        private int LabID { get; set; }
-        private string Namn { get; set; }
+        public int LabID = new Random().Next(1, 8);
+        public string Namn { get; set; }
         private string Betyg;
         private Student student;
         private Course Kurs;
@@ -17,13 +17,32 @@ namespace SchoolSystem
         {
             this.Namn = namn;
             this.Kurs = c;
-
         }
-
+        public int GetID()
+        {
+            return LabID;
+        }
         public void AddStudentAndBetyg(Student s, string betyg)
         {
             student = s;
             this.Betyg = betyg;
+        }
+        public string[] ListaAllalabbar()
+        {
+            var rad = new string[] { LabID.ToString(), Namn,Kurs.Name };
+            return rad;
+        }
+        public Course GetCourse()
+        {
+            return Kurs;
+        }
+        public Student GetStudent()
+        {
+            return student;
+        }
+        public string PrintInfo()
+        {
+            return $"Student: {student.Name} Lab: {Namn} Kurs: {Kurs.Name} Betyg: {Betyg}";
         }
     }
 

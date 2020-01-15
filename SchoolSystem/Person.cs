@@ -6,11 +6,16 @@ using System.Threading.Tasks;
 
 namespace SchoolSystem
 {
-    public abstract class Person 
+    public abstract class Person :IPerson
     {
-        protected string Name { get; set; }
+        public string Name { get; set; }
         protected string Email { get; set; }
         protected string PersonNummer { get; set; }
-        
+
+        public abstract int GetID();
+
+
+        public abstract string[] ListaAttPrinta();
+
     }
 }

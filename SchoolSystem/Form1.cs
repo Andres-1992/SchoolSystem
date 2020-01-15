@@ -70,8 +70,6 @@ namespace SchoolSystem
             {
                 frm5 = new Form5();
                 frm5.SetAll(studenter, teachers,courses);
-
-
             }
             frm5.Show(this);
         }

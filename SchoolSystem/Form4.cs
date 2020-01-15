@@ -45,28 +45,39 @@ namespace SchoolSystem
             {
                 var listView = new ListViewItem(item.ListaKurser());
                 listViewCourses.Items.Add(listView);
-
             }
         }
 
         private void addToCoursebutton_Click(object sender, EventArgs e)
         {
-            Course c;
-            c = courses.Find(x => (x.GetID().Equals(int.Parse(courseIDbox.Text))));
-
-            Student s;
-            s = students.Find(x => (x.GetID().Equals(int.Parse(studentIDbox.Text))));
+            bool kontroll = true;
+            Course c = courses.Find(x => (x.GetID().Equals(int.Parse(courseIDbox.Text))));
+            Student s = students.Find(x => (x.GetID().Equals(int.Parse(studentIDbox.Text))));
+            if (!string.IsNullOrWhiteSpace(studentIDbox.Text))
+            {
             c.AddStudentToCourse(s);
+            }
+           
+            Teacher t = teachers.Find(x => (x.GetID().Equals(int.Parse(teacherIDbox.Text))));
+            if (!string.IsNullOrWhiteSpace(teacherIDbox.Text))
+            {
+             c.AddTeacherToCourse(t);
+            }
+            if (s == null || t == null)
+            {
+                kontroll = false;
+                MessageBox.Show("något gick fel");
+            }
 
-            Teacher t;
-            t = teachers.Find(x => (x.GetID().Equals(int.Parse(teacherIDbox.Text))));
-            c.AddTeacherToCourse(t);
+            if (kontroll)
+            {
+              MessageBox.Show("Student: " + s.Name + "\nLärare: " + t.Name + "\nHar lagts till i följande kurs: " + c.Name);
+            }
         }
 
         private void deleteCoursebutton_Click(object sender, EventArgs e)
         {
-            Course c;
-            c = courses.Find(x => (x.GetID().Equals(int.Parse(IDbox.Text))));
+            Course c = courses.Find(x => (x.GetID().Equals(int.Parse(IDbox.Text))));
             courses.Remove(c);        
     
             listViewCourses.Items.Clear();
@@ -81,20 +92,37 @@ namespace SchoolSystem
 
         private void deleteStudentbutton_Click(object sender, EventArgs e)
         {
-            Course c;
-            c = courses.Find(x => (x.GetID().Equals(int.Parse(cIDbox1.Text))));
-            Student s;
-            s = students.Find(x => (x.GetID().Equals(int.Parse(sIDbox.Text))));
+            Course c = courses.Find(x => (x.GetID().Equals(int.Parse(cIDbox1.Text))));
+            Student s = students.Find(x => (x.GetID().Equals(int.Parse(sIDbox.Text))));
             c.DeleteStudent(s);
         }
 
         private void deleteTeacherbutton_Click(object sender, EventArgs e)
         {
-            Course c;
-            c = courses.Find(x => (x.GetID().Equals(int.Parse(cIDbox2.Text))));
-            Teacher t;
-            t = teachers.Find(x => (x.GetID().Equals(int.Parse(tIDbox.Text))));
+            Course c = courses.Find(x => (x.GetID().Equals(int.Parse(cIDbox2.Text))));
+            Teacher t = teachers.Find(x => (x.GetID().Equals(int.Parse(tIDbox.Text))));
             c.DeleteTeacher(t);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            allStudentsinCourse.Items.Clear();
+            Course c = courses.Find(x => (x.GetID().Equals(int.Parse(cIDbox3.Text))));
+
+            foreach (Student item in c.Getstudent())
+            {
+                allStudentsinCourse.Items.Add("Kurs : "+c.Name+ "\tStudennamn: "+item.Name);
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            teacherTeaminCourse.Items.Clear();
+            Course c = courses.Find(x => (x.GetID().Equals(int.Parse(cIDbox4.Text))));
+            foreach (Teacher item in c.GetTeachers())
+            {
+                teacherTeaminCourse.Items.Add("Kurs : " + c.Name + "\t Lärarnamn: " + item.Name);
+            }
         }
     }
 }

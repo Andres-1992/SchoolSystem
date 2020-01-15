@@ -41,6 +41,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.betygtextBox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.listViewLab = new System.Windows.Forms.ListView();
+            this.chID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chHP = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chNamn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // namnLabel
@@ -151,12 +159,85 @@
             this.button1.TabIndex = 12;
             this.button1.Text = "Sätt betyg";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // listViewLab
+            // 
+            this.listViewLab.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.chID,
+            this.chHP,
+            this.chNamn});
+            this.listViewLab.FullRowSelect = true;
+            this.listViewLab.GridLines = true;
+            this.listViewLab.HideSelection = false;
+            this.listViewLab.Location = new System.Drawing.Point(49, 208);
+            this.listViewLab.Name = "listViewLab";
+            this.listViewLab.Size = new System.Drawing.Size(283, 204);
+            this.listViewLab.TabIndex = 14;
+            this.listViewLab.UseCompatibleStateImageBehavior = false;
+            this.listViewLab.View = System.Windows.Forms.View.Details;
+            // 
+            // chID
+            // 
+            this.chID.Text = "ID";
+            this.chID.Width = 36;
+            // 
+            // chHP
+            // 
+            this.chHP.Text = "Namn";
+            this.chHP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.chHP.Width = 105;
+            // 
+            // chNamn
+            // 
+            this.chNamn.Text = "Kurs";
+            this.chNamn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.chNamn.Width = 133;
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(383, 218);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(391, 173);
+            this.listBox1.TabIndex = 15;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(613, 404);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(116, 23);
+            this.button2.TabIndex = 16;
+            this.button2.Text = "Visa betyg";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(449, 414);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(58, 13);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "Student ID";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(513, 407);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(84, 20);
+            this.textBox3.TabIndex = 17;
             // 
             // Form5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.listViewLab);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.betygtextBox);
             this.Controls.Add(this.label3);
@@ -192,5 +273,13 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox betygtextBox;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ListView listViewLab;
+        private System.Windows.Forms.ColumnHeader chID;
+        private System.Windows.Forms.ColumnHeader chHP;
+        private System.Windows.Forms.ColumnHeader chNamn;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBox3;
     }
 }

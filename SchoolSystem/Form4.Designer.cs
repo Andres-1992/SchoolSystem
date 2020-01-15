@@ -58,11 +58,21 @@
             this.tIDbox = new System.Windows.Forms.TextBox();
             this.sIDbox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.allStudentsinCourse = new System.Windows.Forms.ListBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cIDbox3 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cIDbox4 = new System.Windows.Forms.TextBox();
+            this.teacherTeaminCourse = new System.Windows.Forms.ListBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // closeButton
             // 
-            this.closeButton.Location = new System.Drawing.Point(37, 34);
+            this.closeButton.Location = new System.Drawing.Point(13, 12);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(75, 23);
             this.closeButton.TabIndex = 0;
@@ -96,28 +106,28 @@
             // 
             // courseIDbox
             // 
-            this.courseIDbox.Location = new System.Drawing.Point(763, 103);
+            this.courseIDbox.Location = new System.Drawing.Point(492, 106);
             this.courseIDbox.Name = "courseIDbox";
             this.courseIDbox.Size = new System.Drawing.Size(100, 20);
             this.courseIDbox.TabIndex = 4;
             // 
             // studentIDbox
             // 
-            this.studentIDbox.Location = new System.Drawing.Point(763, 140);
+            this.studentIDbox.Location = new System.Drawing.Point(492, 143);
             this.studentIDbox.Name = "studentIDbox";
             this.studentIDbox.Size = new System.Drawing.Size(100, 20);
             this.studentIDbox.TabIndex = 5;
             // 
             // teacherIDbox
             // 
-            this.teacherIDbox.Location = new System.Drawing.Point(763, 170);
+            this.teacherIDbox.Location = new System.Drawing.Point(492, 173);
             this.teacherIDbox.Name = "teacherIDbox";
             this.teacherIDbox.Size = new System.Drawing.Size(100, 20);
             this.teacherIDbox.TabIndex = 6;
             // 
             // addToCoursebutton
             // 
-            this.addToCoursebutton.Location = new System.Drawing.Point(763, 227);
+            this.addToCoursebutton.Location = new System.Drawing.Point(492, 230);
             this.addToCoursebutton.Name = "addToCoursebutton";
             this.addToCoursebutton.Size = new System.Drawing.Size(100, 23);
             this.addToCoursebutton.TabIndex = 7;
@@ -146,7 +156,7 @@
             // courseID
             // 
             this.courseID.AutoSize = true;
-            this.courseID.Location = new System.Drawing.Point(700, 106);
+            this.courseID.Location = new System.Drawing.Point(429, 109);
             this.courseID.Name = "courseID";
             this.courseID.Size = new System.Drawing.Size(42, 13);
             this.courseID.TabIndex = 10;
@@ -155,7 +165,7 @@
             // sIDlabel
             // 
             this.sIDlabel.AutoSize = true;
-            this.sIDlabel.Location = new System.Drawing.Point(700, 143);
+            this.sIDlabel.Location = new System.Drawing.Point(429, 146);
             this.sIDlabel.Name = "sIDlabel";
             this.sIDlabel.Size = new System.Drawing.Size(58, 13);
             this.sIDlabel.TabIndex = 11;
@@ -164,7 +174,7 @@
             // tIDlabel
             // 
             this.tIDlabel.AutoSize = true;
-            this.tIDlabel.Location = new System.Drawing.Point(700, 173);
+            this.tIDlabel.Location = new System.Drawing.Point(429, 176);
             this.tIDlabel.Name = "tIDlabel";
             this.tIDlabel.Size = new System.Drawing.Size(61, 13);
             this.tIDlabel.TabIndex = 12;
@@ -181,7 +191,7 @@
             this.listViewCourses.HideSelection = false;
             this.listViewCourses.Location = new System.Drawing.Point(34, 278);
             this.listViewCourses.Name = "listViewCourses";
-            this.listViewCourses.Size = new System.Drawing.Size(330, 204);
+            this.listViewCourses.Size = new System.Drawing.Size(338, 204);
             this.listViewCourses.TabIndex = 13;
             this.listViewCourses.UseCompatibleStateImageBehavior = false;
             this.listViewCourses.View = System.Windows.Forms.View.Details;
@@ -205,7 +215,7 @@
             // 
             // deleteCoursebutton
             // 
-            this.deleteCoursebutton.Location = new System.Drawing.Point(286, 594);
+            this.deleteCoursebutton.Location = new System.Drawing.Point(286, 523);
             this.deleteCoursebutton.Name = "deleteCoursebutton";
             this.deleteCoursebutton.Size = new System.Drawing.Size(75, 23);
             this.deleteCoursebutton.TabIndex = 20;
@@ -216,7 +226,7 @@
             // ID
             // 
             this.ID.AutoSize = true;
-            this.ID.Location = new System.Drawing.Point(31, 604);
+            this.ID.Location = new System.Drawing.Point(31, 533);
             this.ID.Name = "ID";
             this.ID.Size = new System.Drawing.Size(42, 13);
             this.ID.TabIndex = 19;
@@ -224,7 +234,7 @@
             // 
             // IDbox
             // 
-            this.IDbox.Location = new System.Drawing.Point(123, 597);
+            this.IDbox.Location = new System.Drawing.Point(123, 526);
             this.IDbox.Name = "IDbox";
             this.IDbox.Size = new System.Drawing.Size(119, 20);
             this.IDbox.TabIndex = 18;
@@ -232,7 +242,7 @@
             // 
             // deleteTeacherbutton
             // 
-            this.deleteTeacherbutton.Location = new System.Drawing.Point(857, 595);
+            this.deleteTeacherbutton.Location = new System.Drawing.Point(1004, 758);
             this.deleteTeacherbutton.Name = "deleteTeacherbutton";
             this.deleteTeacherbutton.Size = new System.Drawing.Size(75, 23);
             this.deleteTeacherbutton.TabIndex = 23;
@@ -242,7 +252,7 @@
             // 
             // cIDbox2
             // 
-            this.cIDbox2.Location = new System.Drawing.Point(520, 591);
+            this.cIDbox2.Location = new System.Drawing.Point(667, 754);
             this.cIDbox2.Name = "cIDbox2";
             this.cIDbox2.Size = new System.Drawing.Size(119, 20);
             this.cIDbox2.TabIndex = 21;
@@ -250,7 +260,7 @@
             // 
             // deleteStudentbutton
             // 
-            this.deleteStudentbutton.Location = new System.Drawing.Point(857, 565);
+            this.deleteStudentbutton.Location = new System.Drawing.Point(1004, 380);
             this.deleteStudentbutton.Name = "deleteStudentbutton";
             this.deleteStudentbutton.Size = new System.Drawing.Size(75, 23);
             this.deleteStudentbutton.TabIndex = 26;
@@ -260,7 +270,7 @@
             // 
             // cIDbox1
             // 
-            this.cIDbox1.Location = new System.Drawing.Point(520, 563);
+            this.cIDbox1.Location = new System.Drawing.Point(667, 378);
             this.cIDbox1.Name = "cIDbox1";
             this.cIDbox1.Size = new System.Drawing.Size(119, 20);
             this.cIDbox1.TabIndex = 24;
@@ -269,7 +279,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(655, 595);
+            this.label1.Location = new System.Drawing.Point(802, 758);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 13);
             this.label1.TabIndex = 32;
@@ -278,7 +288,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(655, 565);
+            this.label2.Location = new System.Drawing.Point(802, 380);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 13);
             this.label2.TabIndex = 31;
@@ -287,7 +297,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(463, 563);
+            this.label3.Location = new System.Drawing.Point(610, 378);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 13);
             this.label3.TabIndex = 30;
@@ -295,14 +305,14 @@
             // 
             // tIDbox
             // 
-            this.tIDbox.Location = new System.Drawing.Point(733, 595);
+            this.tIDbox.Location = new System.Drawing.Point(880, 758);
             this.tIDbox.Name = "tIDbox";
             this.tIDbox.Size = new System.Drawing.Size(100, 20);
             this.tIDbox.TabIndex = 29;
             // 
             // sIDbox
             // 
-            this.sIDbox.Location = new System.Drawing.Point(733, 565);
+            this.sIDbox.Location = new System.Drawing.Point(880, 380);
             this.sIDbox.Name = "sIDbox";
             this.sIDbox.Size = new System.Drawing.Size(100, 20);
             this.sIDbox.TabIndex = 28;
@@ -310,17 +320,116 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(463, 591);
+            this.label4.Location = new System.Drawing.Point(610, 754);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(42, 13);
             this.label4.TabIndex = 33;
             this.label4.Text = "Kurs ID";
             // 
+            // allStudentsinCourse
+            // 
+            this.allStudentsinCourse.FormattingEnabled = true;
+            this.allStudentsinCourse.Location = new System.Drawing.Point(708, 173);
+            this.allStudentsinCourse.Name = "allStudentsinCourse";
+            this.allStudentsinCourse.Size = new System.Drawing.Size(268, 199);
+            this.allStudentsinCourse.TabIndex = 34;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(744, 109);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(42, 13);
+            this.label5.TabIndex = 36;
+            this.label5.Text = "Kurs ID";
+            // 
+            // cIDbox3
+            // 
+            this.cIDbox3.Location = new System.Drawing.Point(801, 109);
+            this.cIDbox3.Name = "cIDbox3";
+            this.cIDbox3.Size = new System.Drawing.Size(119, 20);
+            this.cIDbox3.TabIndex = 35;
+            this.cIDbox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(820, 144);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 23);
+            this.button1.TabIndex = 37;
+            this.button1.Text = "Visa ";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(822, 520);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(100, 23);
+            this.button2.TabIndex = 41;
+            this.button2.Text = "Visa ";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(746, 485);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(42, 13);
+            this.label6.TabIndex = 40;
+            this.label6.Text = "Kurs ID";
+            // 
+            // cIDbox4
+            // 
+            this.cIDbox4.Location = new System.Drawing.Point(803, 485);
+            this.cIDbox4.Name = "cIDbox4";
+            this.cIDbox4.Size = new System.Drawing.Size(119, 20);
+            this.cIDbox4.TabIndex = 39;
+            this.cIDbox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // teacherTeaminCourse
+            // 
+            this.teacherTeaminCourse.FormattingEnabled = true;
+            this.teacherTeaminCourse.Location = new System.Drawing.Point(710, 549);
+            this.teacherTeaminCourse.Name = "teacherTeaminCourse";
+            this.teacherTeaminCourse.Size = new System.Drawing.Size(268, 199);
+            this.teacherTeaminCourse.TabIndex = 38;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(798, 74);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(97, 25);
+            this.label7.TabIndex = 42;
+            this.label7.Text = "Studenter";
+            // 
+            // label8
+            // 
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(800, 444);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(74, 38);
+            this.label8.TabIndex = 43;
+            this.label8.Text = "Lärare";
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(958, 700);
+            this.ClientSize = new System.Drawing.Size(1090, 836);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.cIDbox4);
+            this.Controls.Add(this.teacherTeaminCourse);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.cIDbox3);
+            this.Controls.Add(this.allStudentsinCourse);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
@@ -387,5 +496,15 @@
         private System.Windows.Forms.TextBox tIDbox;
         private System.Windows.Forms.TextBox sIDbox;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ListBox allStudentsinCourse;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox cIDbox3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox cIDbox4;
+        private System.Windows.Forms.ListBox teacherTeaminCourse;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
     }
 }

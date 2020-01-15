@@ -28,15 +28,41 @@ namespace SchoolSystem
         }
         private void createLabButton_Click(object sender, EventArgs e)
         {
-            Course c;
-            c = courses.Find(x => (x.GetID().Equals(int.Parse(textBox2.Text))));
+            Course c = courses.Find(x => (x.GetID().Equals(int.Parse(textBox2.Text))));
             Lab l = new Lab(textBox1.Text, c);
             labbar.Add(l);
+            listViewLab.Items.Clear();
+
+            foreach (Lab item in labbar)
+            {
+                var listView = new ListViewItem(item.ListaAllalabbar());
+                listViewLab.Items.Add(listView);
+            }
         }
         private void closebutton_Click(object sender, EventArgs e)
         {
             this.Hide();
             Owner.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Lab  l = labbar.Find(x => x.LabID.Equals(int.Parse(lIDtextBox.Text)));
+            Student s = students.Find(x => x.GetID().Equals(int.Parse(sIDtextBox.Text)));
+            l.GetCourse();
+            l.AddStudentAndBetyg(s, betygtextBox.Text);
+            MessageBox.Show("Betyget: " + betygtextBox.Text + " är satt för " + s.Name + "\nLab: " +l.Namn+"\nKurs: " + l.GetCourse().Name);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
+
+            foreach (var item in labbar.FindAll(x => x.GetStudent().GetID().Equals(int.Parse(textBox3.Text))))
+            {
+               listBox1.Items.Add( item.PrintInfo());
+            }              
+            
         }
     }
 }
