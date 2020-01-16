@@ -29,7 +29,7 @@ namespace SchoolSystem
         {
             return this.StudentID;
         }
-        public override string[] ListaAttPrinta()
+        public override string[] ListToPrint()
         {
             var rad = new string[] { StudentID.ToString(), Name, Email, PersonNummer };
             return rad;

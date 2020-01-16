@@ -15,7 +15,7 @@ namespace SchoolSystem
         List<Student> students = new List<Student>();
         List<Teacher> teachers = new List<Teacher>();
         List<Course> courses = new List<Course>();
-        List<Lab> labbar =new List<Lab>();
+        List<Lab> labs =new List<Lab>();
        public void SetAll(List<Student> s, List<Teacher>t, List<Course>c)
         {
             students = s;
@@ -30,10 +30,10 @@ namespace SchoolSystem
         {
             Course c = courses.Find(x => (x.GetID().Equals(int.Parse(textBox2.Text))));
             Lab l = new Lab(textBox1.Text, c);
-            labbar.Add(l);
+            labs.Add(l);
             listViewLab.Items.Clear();
 
-            foreach (Lab item in labbar)
+            foreach (Lab item in labs)
             {
                 var listView = new ListViewItem(item.ListaAllalabbar());
                 listViewLab.Items.Add(listView);
@@ -47,18 +47,18 @@ namespace SchoolSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Lab  l = labbar.Find(x => x.LabID.Equals(int.Parse(lIDtextBox.Text)));
+            Lab  l = labs.Find(x => x.LabID.Equals(int.Parse(lIDtextBox.Text)));
             Student s = students.Find(x => x.GetID().Equals(int.Parse(sIDtextBox.Text)));
             l.GetCourse();
             l.AddStudentAndBetyg(s, betygtextBox.Text);
-            MessageBox.Show("Betyget: " + betygtextBox.Text + " är satt för " + s.Name + "\nLab: " +l.Namn+"\nKurs: " + l.GetCourse().Name);
+            MessageBox.Show("Grade: " + betygtextBox.Text + "\nStudent: " + s.Name + "\nLab: " +l.Namn+"\nCourse: " + l.GetCourse().Name);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             listBox1.Items.Clear();
 
-            foreach (var item in labbar.FindAll(x => x.GetStudent().GetID().Equals(int.Parse(textBox3.Text))))
+            foreach (var item in labs.FindAll(x => x.GetStudent().GetID().Equals(int.Parse(textBox3.Text))))
             {
                listBox1.Items.Add( item.PrintInfo());
             }              

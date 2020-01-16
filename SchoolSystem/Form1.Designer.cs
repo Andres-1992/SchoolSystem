@@ -94,7 +94,7 @@
             this.courseButton.Name = "courseButton";
             this.courseButton.Size = new System.Drawing.Size(100, 49);
             this.courseButton.TabIndex = 3;
-            this.courseButton.Text = "Course";
+            this.courseButton.Text = "Courses";
             this.courseButton.UseVisualStyleBackColor = true;
             this.courseButton.Click += new System.EventHandler(this.courseButton_Click);
             // 

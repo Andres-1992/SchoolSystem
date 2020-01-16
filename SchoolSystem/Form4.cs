@@ -43,64 +43,64 @@ namespace SchoolSystem
             listViewCourses.Items.Clear();
             foreach (Course item in courses)
             {
-                var listView = new ListViewItem(item.ListaKurser());
+                var listView = new ListViewItem(item.ListCourses());
                 listViewCourses.Items.Add(listView);
             }
         }
 
         private void addToCoursebutton_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(studentIDbox.Text) && !string.IsNullOrWhiteSpace(courseIDbox.Text))
+
+            if (!string.IsNullOrWhiteSpace(courseIDbox.Text))
             {
                 Course c = courses.Find(x => (x.GetID().Equals(int.Parse(courseIDbox.Text))));
-                Student s = students.Find(x => (x.GetID().Equals(int.Parse(studentIDbox.Text))));
-                if (checkBox1.Checked)
-                {
-
-                    if (!string.IsNullOrWhiteSpace(teacherIDbox.Text))
-                    {
+                if (checkBox1.Checked && !string.IsNullOrWhiteSpace(teacherIDbox.Text))
+                {                                      
                         Teacher t = teachers.Find(x => (x.GetID().Equals(int.Parse(teacherIDbox.Text))));
-                        if (s == null || t == null)
+                        if (t == null || c == null)
                         {
-                            MessageBox.Show("något gick fel");
+                            MessageBox.Show("fel");
                         }
                         else
                         {
                             c.AddTeacherToCourse(t);
-                            c.AddStudentToCourse(s);
-
-                            MessageBox.Show("Student: " + s.Name + "\nLärare: " + t.Name + "\nHar lagts till i följande kurs: " + c.Name);
-
+                            MessageBox.Show("Teacher: " + t.Name + "\nWas added to course " + c.Name);
                         }
-                    }
-                    else
+                        teacherIDbox.Clear();                    
+                }
+                else if (checkBox1.Checked && string.IsNullOrEmpty(teacherIDbox.Text))
+                {
+                    MessageBox.Show("Fill teacherID");
+                }               
+                    if (checkBox2.Checked && !string.IsNullOrWhiteSpace(studentIDbox.Text))
                     {
-                        MessageBox.Show("Fill TeacherID");
+                        Student s = students.Find(x => (x.GetID().Equals(int.Parse(studentIDbox.Text))));
+                        if (s == null || c == null)
+                        {
+                            MessageBox.Show("fel");
+                        }
+                        else
+                        {
+                            c.AddStudentToCourse(s);
+                            MessageBox.Show("Student: " + s.Name + "\nWas added to course " + c.Name);
+                        }
+                        studentIDbox.Clear();
                     }
 
+                else if (checkBox2.Checked && string.IsNullOrWhiteSpace(studentIDbox.Text))
+                {
+                    MessageBox.Show("Fill StudentID");
                 }
                 else
                 {
-                    if (s==null||c==null)
-                    {
-                        MessageBox.Show("Something went wrong, try again");
-                    }
-                    else
-                    {
-                        c.AddStudentToCourse(s);
-
-                        MessageBox.Show("Student: " + s.Name +  "\nHar lagts till i följande kurs: " + c.Name);
-
-
-                    }
+                    MessageBox.Show("Course ID: " + courseIDbox.Text+ " does not exist");
                 }
-               
-            } 
-
-            else 
+            }  
+            else
             {
-              MessageBox.Show("You have to fill CoureseID and StudentID");
-            }
+                MessageBox.Show("You havent done anything");
+            }        
+
         }
         private void deleteCoursebutton_Click(object sender, EventArgs e)
         {
@@ -111,7 +111,7 @@ namespace SchoolSystem
 
             foreach (Course s in courses)
             {
-                var listView = new ListViewItem(s.ListaKurser());
+                var listView = new ListViewItem(s.ListCourses());
                 listView.Tag = s;
                 listViewCourses.Items.Add(listView);
             }
@@ -135,10 +135,17 @@ namespace SchoolSystem
         {
             allStudentsinCourse.Items.Clear();
             Course c = courses.Find(x => (x.GetID().Equals(int.Parse(cIDbox3.Text))));
-
-            foreach (Student item in c.Getstudent())
+            if (c != null)
             {
-                allStudentsinCourse.Items.Add("Kurs : " + c.Name + "\tStudennamn: " + item.Name);
+                foreach (Student item in c.Getstudent())
+                {
+                    allStudentsinCourse.Items.Add("Course : " + c.Name + "\tStudentname: " + item.Name);
+                }
+
+            }
+            else if (c==null)
+            {
+                MessageBox.Show("StudentId: "+ cIDbox3.Text + " does not exist");
             }
         }
 
@@ -146,9 +153,16 @@ namespace SchoolSystem
         {
             teacherTeaminCourse.Items.Clear();
             Course c = courses.Find(x => (x.GetID().Equals(int.Parse(cIDbox4.Text))));
-            foreach (Teacher item in c.GetTeachers())
+            if (c != null)
             {
-                teacherTeaminCourse.Items.Add("Kurs : " + c.Name + "\t Lärarnamn: " + item.Name);
+                foreach (Teacher item in c.GetTeachers())
+                {
+                    teacherTeaminCourse.Items.Add("Course : " + c.Name + "\t Teachername: " + item.Name);
+                }
+            }
+            else if (c == null)
+            {
+                MessageBox.Show("Course ID: "+ cIDbox4.Text + " does not exist");
             }
         }
 
@@ -162,6 +176,19 @@ namespace SchoolSystem
             {
                 teacherIDbox.Enabled = false;
                 teacherIDbox.BackColor = SystemColors.Window;
+            }
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox2.Checked)
+            {
+                studentIDbox.Enabled = true;
+            }
+            else
+            {
+                studentIDbox.Enabled = false;
+                studentIDbox.BackColor = SystemColors.Window;
             }
         }
     }

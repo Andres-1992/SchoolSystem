@@ -66,9 +66,9 @@
             this.lastnamelabel.AutoSize = true;
             this.lastnamelabel.Location = new System.Drawing.Point(25, 93);
             this.lastnamelabel.Name = "lastnamelabel";
-            this.lastnamelabel.Size = new System.Drawing.Size(55, 13);
+            this.lastnamelabel.Size = new System.Drawing.Size(53, 13);
             this.lastnamelabel.TabIndex = 23;
-            this.lastnamelabel.Text = "Efternamn";
+            this.lastnamelabel.Text = "Lastname";
             // 
             // TfirstnameBox
             // 
@@ -103,7 +103,7 @@
             this.firstNamelabel.Name = "firstNamelabel";
             this.firstNamelabel.Size = new System.Drawing.Size(35, 13);
             this.firstNamelabel.TabIndex = 19;
-            this.firstNamelabel.Text = "Namn";
+            this.firstNamelabel.Text = "Name";
             // 
             // TlastnameBox
             // 
@@ -131,11 +131,11 @@
             // 
             // addTeacherButton
             // 
-            this.addTeacherButton.Location = new System.Drawing.Point(338, 188);
+            this.addTeacherButton.Location = new System.Drawing.Point(331, 188);
             this.addTeacherButton.Name = "addTeacherButton";
-            this.addTeacherButton.Size = new System.Drawing.Size(75, 23);
+            this.addTeacherButton.Size = new System.Drawing.Size(82, 23);
             this.addTeacherButton.TabIndex = 19;
-            this.addTeacherButton.Text = "Lägg till";
+            this.addTeacherButton.Text = "Add teachers";
             this.addTeacherButton.UseVisualStyleBackColor = true;
             this.addTeacherButton.Click += new System.EventHandler(this.addTeacherButton_Click);
             // 
@@ -206,9 +206,9 @@
             // 
             this.deleteTeacherButton.Location = new System.Drawing.Point(267, 462);
             this.deleteTeacherButton.Name = "deleteTeacherButton";
-            this.deleteTeacherButton.Size = new System.Drawing.Size(75, 23);
+            this.deleteTeacherButton.Size = new System.Drawing.Size(94, 23);
             this.deleteTeacherButton.TabIndex = 29;
-            this.deleteTeacherButton.Text = "Ta bort student";
+            this.deleteTeacherButton.Text = "Delete teacher";
             this.deleteTeacherButton.UseVisualStyleBackColor = true;
             this.deleteTeacherButton.Click += new System.EventHandler(this.deleteTeacherButton_Click);
             // 
@@ -250,11 +250,10 @@
             this.Controls.Add(this.TpersNrBox);
             this.Controls.Add(this.TemailBox);
             this.Controls.Add(this.addTeacherButton);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form3";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form3";
-
             this.ResumeLayout(false);
             this.PerformLayout();
 

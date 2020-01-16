@@ -43,8 +43,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.listViewLab = new System.Windows.Forms.ListView();
             this.chID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chHP = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chNamn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chCourse = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.button2 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -56,18 +56,18 @@
             this.namnLabel.AutoSize = true;
             this.namnLabel.Location = new System.Drawing.Point(60, 82);
             this.namnLabel.Name = "namnLabel";
-            this.namnLabel.Size = new System.Drawing.Size(54, 13);
+            this.namnLabel.Size = new System.Drawing.Size(51, 13);
             this.namnLabel.TabIndex = 0;
-            this.namnLabel.Text = "Lab namn";
+            this.namnLabel.Text = "Labname";
             // 
             // kurslabel
             // 
             this.kurslabel.AutoSize = true;
             this.kurslabel.Location = new System.Drawing.Point(60, 115);
             this.kurslabel.Name = "kurslabel";
-            this.kurslabel.Size = new System.Drawing.Size(31, 13);
+            this.kurslabel.Size = new System.Drawing.Size(51, 13);
             this.kurslabel.TabIndex = 1;
-            this.kurslabel.Text = "Kurs ";
+            this.kurslabel.Text = "CourseID";
             // 
             // closebutton
             // 
@@ -99,7 +99,7 @@
             this.createLabButton.Name = "createLabButton";
             this.createLabButton.Size = new System.Drawing.Size(75, 23);
             this.createLabButton.TabIndex = 5;
-            this.createLabButton.Text = "Skapa lab";
+            this.createLabButton.Text = "Add lab";
             this.createLabButton.UseVisualStyleBackColor = true;
             this.createLabButton.Click += new System.EventHandler(this.createLabButton_Click);
             // 
@@ -122,27 +122,27 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(510, 55);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 13);
+            this.label1.Size = new System.Drawing.Size(36, 13);
             this.label1.TabIndex = 8;
-            this.label1.Text = "Lab ID";
+            this.label1.Text = "LabID";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(510, 88);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 13);
+            this.label2.Size = new System.Drawing.Size(55, 13);
             this.label2.TabIndex = 9;
-            this.label2.Text = "Student ID";
+            this.label2.Text = "StudentID";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(510, 123);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(34, 13);
+            this.label3.Size = new System.Drawing.Size(36, 13);
             this.label3.TabIndex = 10;
-            this.label3.Text = "Betyg";
+            this.label3.Text = "Grade";
             // 
             // betygtextBox
             // 
@@ -157,7 +157,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 23);
             this.button1.TabIndex = 12;
-            this.button1.Text = "Sätt betyg";
+            this.button1.Text = "Grade student";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -165,8 +165,8 @@
             // 
             this.listViewLab.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.chID,
-            this.chHP,
-            this.chNamn});
+            this.chName,
+            this.chCourse});
             this.listViewLab.FullRowSelect = true;
             this.listViewLab.GridLines = true;
             this.listViewLab.HideSelection = false;
@@ -182,17 +182,17 @@
             this.chID.Text = "ID";
             this.chID.Width = 36;
             // 
-            // chHP
+            // chName
             // 
-            this.chHP.Text = "Namn";
-            this.chHP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.chHP.Width = 105;
+            this.chName.Text = "Name";
+            this.chName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.chName.Width = 105;
             // 
-            // chNamn
+            // chCourse
             // 
-            this.chNamn.Text = "Kurs";
-            this.chNamn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.chNamn.Width = 133;
+            this.chCourse.Text = "Course";
+            this.chCourse.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.chCourse.Width = 133;
             // 
             // listBox1
             // 
@@ -208,7 +208,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(116, 23);
             this.button2.TabIndex = 16;
-            this.button2.Text = "Visa betyg";
+            this.button2.Text = "Show student grades";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -276,8 +276,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ListView listViewLab;
         private System.Windows.Forms.ColumnHeader chID;
-        private System.Windows.Forms.ColumnHeader chHP;
-        private System.Windows.Forms.ColumnHeader chNamn;
+        private System.Windows.Forms.ColumnHeader chName;
+        private System.Windows.Forms.ColumnHeader chCourse;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label4;

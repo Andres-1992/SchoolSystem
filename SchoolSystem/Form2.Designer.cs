@@ -37,7 +37,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.listViewStudents = new System.Windows.Forms.ListView();
             this.chID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chNamn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chMail = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chPersNr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SfirstnameBox = new System.Windows.Forms.TextBox();
@@ -54,7 +54,7 @@
             this.addStudentButton.Name = "addStudentButton";
             this.addStudentButton.Size = new System.Drawing.Size(75, 23);
             this.addStudentButton.TabIndex = 5;
-            this.addStudentButton.Text = "Lägg till";
+            this.addStudentButton.Text = "Add student";
             this.addStudentButton.UseVisualStyleBackColor = true;
             this.addStudentButton.Click += new System.EventHandler(this.addStudentButton_Click);
             // 
@@ -89,7 +89,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 6;
-            this.label2.Text = "Namn";
+            this.label2.Text = "Name";
             // 
             // label3
             // 
@@ -113,7 +113,7 @@
             // 
             this.listViewStudents.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.chID,
-            this.chNamn,
+            this.chName,
             this.chMail,
             this.chPersNr});
             this.listViewStudents.FullRowSelect = true;
@@ -131,11 +131,11 @@
             this.chID.Text = "ID";
             this.chID.Width = 36;
             // 
-            // chNamn
+            // chName
             // 
-            this.chNamn.Text = "Namn";
-            this.chNamn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.chNamn.Width = 131;
+            this.chName.Text = "Name";
+            this.chName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.chName.Width = 131;
             // 
             // chMail
             // 
@@ -162,9 +162,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(16, 101);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.Size = new System.Drawing.Size(53, 13);
             this.label1.TabIndex = 12;
-            this.label1.Text = "Efternamn";
+            this.label1.Text = "Lastname";
             // 
             // buttonCloseForm2
             // 
@@ -197,9 +197,9 @@
             // 
             this.deleteStudentButton.Location = new System.Drawing.Point(258, 439);
             this.deleteStudentButton.Name = "deleteStudentButton";
-            this.deleteStudentButton.Size = new System.Drawing.Size(75, 23);
+            this.deleteStudentButton.Size = new System.Drawing.Size(92, 23);
             this.deleteStudentButton.TabIndex = 17;
-            this.deleteStudentButton.Text = "Ta bort student";
+            this.deleteStudentButton.Text = "Delete student";
             this.deleteStudentButton.UseVisualStyleBackColor = true;
             this.deleteStudentButton.Click += new System.EventHandler(this.deleteStudentButton_Click);
             // 
@@ -241,7 +241,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ListView listViewStudents;
         private System.Windows.Forms.ColumnHeader chID;
-        private System.Windows.Forms.ColumnHeader chNamn;
+        private System.Windows.Forms.ColumnHeader chName;
         private System.Windows.Forms.ColumnHeader chMail;
         private System.Windows.Forms.TextBox SfirstnameBox;
         private System.Windows.Forms.Label label1;

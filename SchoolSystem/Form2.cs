@@ -35,7 +35,7 @@ namespace SchoolSystem
 
             foreach (Student item in students)
             {
-                var listView = new ListViewItem(item.ListaAttPrinta());
+                var listView = new ListViewItem(item.ListToPrint());
                 listViewStudents.Items.Add(listView);
             }
 
@@ -56,7 +56,7 @@ namespace SchoolSystem
 
             foreach (Student item in students)
             {
-                var listView = new ListViewItem(item.ListaAttPrinta());
+                var listView = new ListViewItem(item.ListToPrint());
                 listViewStudents.Items.Add(listView);
             }
         }

@@ -14,8 +14,7 @@ namespace SchoolSystem
 
         public abstract int GetID();
 
-
-        public abstract string[] ListaAttPrinta();
+        public abstract string[] ListToPrint();
 
     }
 }

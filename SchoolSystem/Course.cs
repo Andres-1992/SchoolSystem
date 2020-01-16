@@ -8,7 +8,7 @@ namespace SchoolSystem
 {
     public class Course
     {
-        private int KursID { get; set; }
+        private int CourseID { get; set; }
         public string Name { get; set; }
         private float HP { get; set; }
         private List<Student> Students = new List<Student>();
@@ -16,7 +16,7 @@ namespace SchoolSystem
 
         public Course(string name, float hp)
         {
-            KursID = new Random().Next(201, 300);
+            CourseID = new Random().Next(201, 300);
             this.Name = name;
             this.HP = hp;
         }
@@ -35,9 +35,9 @@ namespace SchoolSystem
         {
             return TeacherTeam;
         }
-        public string[] ListaKurser()
+        public string[] ListCourses()
         {
-            var rad = new string[] { KursID.ToString(), HP.ToString(), Name };
+            var rad = new string[] { CourseID.ToString(), HP.ToString(), Name };
             return rad;
         }
         public void AddTeacherToCourse(Teacher t)
@@ -49,7 +49,7 @@ namespace SchoolSystem
         }
         public int GetID()
         {
-            return KursID;
+            return CourseID;
         }
         public void DeleteStudent(Student s)
         {

@@ -27,7 +27,7 @@ namespace SchoolSystem
             this.Salary = salary;
 
         }
-        public override string[] ListaAttPrinta()
+        public override string[] ListToPrint()
         {
             var rad = new string[] { TeacherID.ToString(), Name, Email, PersonNummer, Salary.ToString() };
             return rad;

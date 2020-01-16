@@ -10,31 +10,31 @@ namespace SchoolSystem
     {
         public int LabID = new Random().Next(1, 8);
         public string Namn { get; set; }
-        private string Betyg;
+        private string Grade;
         private Student student;
-        private Course Kurs;
+        private Course Course;
         public Lab(string namn,Course c)
         {
             this.Namn = namn;
-            this.Kurs = c;
+            this.Course = c;
         }
         public int GetID()
         {
             return LabID;
         }
-        public void AddStudentAndBetyg(Student s, string betyg)
+        public void AddStudentAndBetyg(Student s, string grade)
         {
             student = s;
-            this.Betyg = betyg;
+            this.Grade = grade;
         }
         public string[] ListaAllalabbar()
         {
-            var rad = new string[] { LabID.ToString(), Namn,Kurs.Name };
+            var rad = new string[] { LabID.ToString(), Namn,Course.Name };
             return rad;
         }
         public Course GetCourse()
         {
-            return Kurs;
+            return Course;
         }
         public Student GetStudent()
         {
@@ -42,7 +42,7 @@ namespace SchoolSystem
         }
         public string PrintInfo()
         {
-            return $"Student: {student.Name} Lab: {Namn} Kurs: {Kurs.Name} Betyg: {Betyg}";
+            return $"Student: {student.Name} Lab: {Namn} Course: {Course.Name} Grade: {Grade}";
         }
     }
 

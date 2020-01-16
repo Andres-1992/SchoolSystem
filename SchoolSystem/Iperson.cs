@@ -8,7 +8,7 @@ namespace SchoolSystem
 {
     interface IPerson
     {
-        string[] ListaAttPrinta();
+        string[] ListToPrint();
         
         int GetID();
     }

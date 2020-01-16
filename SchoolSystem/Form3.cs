@@ -42,7 +42,7 @@ namespace SchoolSystem
 			listViewTeachers.Items.Clear();
 			foreach (Teacher item in teachers)
             {
-				var listView = new ListViewItem(item.ListaAttPrinta());
+				var listView = new ListViewItem(item.ListToPrint());
                 listViewTeachers.Tag = item;
                 listViewTeachers.Items.Add(listView);
 			}
@@ -59,7 +59,7 @@ namespace SchoolSystem
             IDbox.Clear();
             foreach (Teacher item in teachers )
             {
-                var listView = new ListViewItem(item.ListaAttPrinta());
+                var listView = new ListViewItem(item.ListToPrint());
                 listView.Tag = item;
                 listViewTeachers.Items.Add(listView);
             }
