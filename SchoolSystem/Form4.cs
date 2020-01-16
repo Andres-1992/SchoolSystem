@@ -91,9 +91,9 @@ namespace SchoolSystem
                 {
                     MessageBox.Show("Fill StudentID");
                 }
-                else
-                {
-                    MessageBox.Show("Course ID: " + courseIDbox.Text+ " does not exist");
+                else if (c== null)
+                {                    
+                       MessageBox.Show("Course ID: " + courseIDbox.Text+ " does not exist");
                 }
             }  
             else
