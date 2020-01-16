@@ -252,6 +252,7 @@
             this.Controls.Add(this.kurslabel);
             this.Controls.Add(this.namnLabel);
             this.Name = "Form5";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form5";
             this.ResumeLayout(false);
             this.PerformLayout();

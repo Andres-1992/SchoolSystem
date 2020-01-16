@@ -68,6 +68,7 @@
             this.teacherTeaminCourse = new System.Windows.Forms.ListBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // closeButton
@@ -120,6 +121,7 @@
             // 
             // teacherIDbox
             // 
+            this.teacherIDbox.Enabled = false;
             this.teacherIDbox.Location = new System.Drawing.Point(492, 173);
             this.teacherIDbox.Name = "teacherIDbox";
             this.teacherIDbox.Size = new System.Drawing.Size(100, 20);
@@ -415,11 +417,23 @@
             this.label8.TabIndex = 43;
             this.label8.Text = "Lärare";
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(358, 175);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(66, 17);
+            this.checkBox1.TabIndex = 44;
+            this.checkBox1.Text = "Teacher";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1090, 836);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.button2);
@@ -458,6 +472,7 @@
             this.Controls.Add(this.addCoursebutton);
             this.Controls.Add(this.closeButton);
             this.Name = "Form4";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form4";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -506,5 +521,6 @@
         private System.Windows.Forms.ListBox teacherTeaminCourse;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

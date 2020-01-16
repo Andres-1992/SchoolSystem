@@ -15,8 +15,8 @@ namespace SchoolSystem
         List<Student> students = new List<Student>();
         List<Teacher> teachers = new List<Teacher>();
         List<Course> courses = new List<Course>();
-            
-        public void SetAll(List<Student> s,List<Teacher> t,List<Course> c)
+
+        public void SetAll(List<Student> s, List<Teacher> t, List<Course> c)
         {
             students = s;
             teachers = t;
@@ -50,36 +50,63 @@ namespace SchoolSystem
 
         private void addToCoursebutton_Click(object sender, EventArgs e)
         {
-            bool kontroll = true;
-            Course c = courses.Find(x => (x.GetID().Equals(int.Parse(courseIDbox.Text))));
-            Student s = students.Find(x => (x.GetID().Equals(int.Parse(studentIDbox.Text))));
-            if (!string.IsNullOrWhiteSpace(studentIDbox.Text))
+            if (!string.IsNullOrWhiteSpace(studentIDbox.Text) && !string.IsNullOrWhiteSpace(courseIDbox.Text))
             {
-            c.AddStudentToCourse(s);
-            }
-           
-            Teacher t = teachers.Find(x => (x.GetID().Equals(int.Parse(teacherIDbox.Text))));
-            if (!string.IsNullOrWhiteSpace(teacherIDbox.Text))
-            {
-             c.AddTeacherToCourse(t);
-            }
-            if (s == null || t == null)
-            {
-                kontroll = false;
-                MessageBox.Show("något gick fel");
-            }
+                Course c = courses.Find(x => (x.GetID().Equals(int.Parse(courseIDbox.Text))));
+                Student s = students.Find(x => (x.GetID().Equals(int.Parse(studentIDbox.Text))));
+                if (checkBox1.Checked)
+                {
 
-            if (kontroll)
+                    if (!string.IsNullOrWhiteSpace(teacherIDbox.Text))
+                    {
+                        Teacher t = teachers.Find(x => (x.GetID().Equals(int.Parse(teacherIDbox.Text))));
+                        if (s == null || t == null)
+                        {
+                            MessageBox.Show("något gick fel");
+                        }
+                        else
+                        {
+                            c.AddTeacherToCourse(t);
+                            c.AddStudentToCourse(s);
+
+                            MessageBox.Show("Student: " + s.Name + "\nLärare: " + t.Name + "\nHar lagts till i följande kurs: " + c.Name);
+
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Fill TeacherID");
+                    }
+
+                }
+                else
+                {
+                    if (s==null||c==null)
+                    {
+                        MessageBox.Show("Something went wrong, try again");
+                    }
+                    else
+                    {
+                        c.AddStudentToCourse(s);
+
+                        MessageBox.Show("Student: " + s.Name +  "\nHar lagts till i följande kurs: " + c.Name);
+
+
+                    }
+                }
+               
+            } 
+
+            else 
             {
-              MessageBox.Show("Student: " + s.Name + "\nLärare: " + t.Name + "\nHar lagts till i följande kurs: " + c.Name);
+              MessageBox.Show("You have to fill CoureseID and StudentID");
             }
         }
-
         private void deleteCoursebutton_Click(object sender, EventArgs e)
         {
             Course c = courses.Find(x => (x.GetID().Equals(int.Parse(IDbox.Text))));
-            courses.Remove(c);        
-    
+            courses.Remove(c);
+
             listViewCourses.Items.Clear();
 
             foreach (Course s in courses)
@@ -111,7 +138,7 @@ namespace SchoolSystem
 
             foreach (Student item in c.Getstudent())
             {
-                allStudentsinCourse.Items.Add("Kurs : "+c.Name+ "\tStudennamn: "+item.Name);
+                allStudentsinCourse.Items.Add("Kurs : " + c.Name + "\tStudennamn: " + item.Name);
             }
         }
 
@@ -122,6 +149,19 @@ namespace SchoolSystem
             foreach (Teacher item in c.GetTeachers())
             {
                 teacherTeaminCourse.Items.Add("Kurs : " + c.Name + "\t Lärarnamn: " + item.Name);
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                teacherIDbox.Enabled = true;
+            }
+            else
+            {
+                teacherIDbox.Enabled = false;
+                teacherIDbox.BackColor = SystemColors.Window;
             }
         }
     }
