@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace SchoolSystem
 {
-   public class Teacher : Person
-   {
+    public class Teacher : Person, ITeacher
+    {
         private static List<bool> UsedCounter = new List<bool>();
         private int TeacherID { get; set; }
         private int Salary { get; set; }
+        private List<Course> Courses = new List<Course>();
         public Teacher(string name, string email, string personnummer, int salary)
         {
             int nextIndex = -1;
@@ -27,15 +28,20 @@ namespace SchoolSystem
             this.Salary = salary;
 
         }
-        public override string[] ListToPrint()
+        public string[] ListToPrint()
         {
             var rad = new string[] { TeacherID.ToString(), Name, Email, PersonNummer, Salary.ToString() };
             return rad;
         }
 
-        public override int GetID()
+        public int GetID()
         {
             return TeacherID;
+        }
+
+        public void AddCourse(Course c)
+        {
+            Courses.Add(c);
         }
     }
 }

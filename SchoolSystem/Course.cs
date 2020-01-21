@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace SchoolSystem
 {
-    public class Course
+    public class Course : ICourse
     {
         private int CourseID { get; set; }
         public string Name { get; set; }
         private float HP { get; set; }
         private List<Student> Students = new List<Student>();
         private List<Teacher> TeacherTeam = new List<Teacher>();
+        private List<Lab> Labs = new List<Lab>();
 
         public Course(string name, float hp)
         {
@@ -20,14 +21,20 @@ namespace SchoolSystem
             this.Name = name;
             this.HP = hp;
         }
-        public void AddStudentToCourse(Student s)
+        public void AddLab(Lab l)
         {
+            Labs.Add(l);
+        }
+        public void AddStudent(Student s)
+        {
+
             if (!s.Equals(null))
             {
                 Students.Add(s);
             }
         }
-        public List<Student> Getstudent()
+
+        public List<Student> GetStudents()
         {
             return Students;
         }
@@ -40,7 +47,7 @@ namespace SchoolSystem
             var rad = new string[] { CourseID.ToString(), HP.ToString(), Name };
             return rad;
         }
-        public void AddTeacherToCourse(Teacher t)
+        public void AddTeacher(Teacher t)
         {
             if (!t.Equals(null))
             {

@@ -15,8 +15,8 @@ namespace SchoolSystem
         List<Student> students = new List<Student>();
         List<Teacher> teachers = new List<Teacher>();
         List<Course> courses = new List<Course>();
-        List<Lab> labs =new List<Lab>();
-       public void SetAll(List<Student> s, List<Teacher>t, List<Course>c)
+        List<Lab> labs = new List<Lab>();
+        public void SetAll(List<Student> s, List<Teacher> t, List<Course> c)
         {
             students = s;
             teachers = t;
@@ -31,11 +31,12 @@ namespace SchoolSystem
             Course c = courses.Find(x => (x.GetID().Equals(int.Parse(textBox2.Text))));
             Lab l = new Lab(textBox1.Text, c);
             labs.Add(l);
+            c.AddLab(l);
             listViewLab.Items.Clear();
 
             foreach (Lab item in labs)
             {
-                var listView = new ListViewItem(item.ListaAllalabbar());
+                var listView = new ListViewItem(item.ListAllLabs());
                 listViewLab.Items.Add(listView);
             }
         }
@@ -47,11 +48,11 @@ namespace SchoolSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Lab  l = labs.Find(x => x.LabID.Equals(int.Parse(lIDtextBox.Text)));
+            Lab l = labs.Find(x => x.LabID.Equals(int.Parse(lIDtextBox.Text)));
             Student s = students.Find(x => x.GetID().Equals(int.Parse(sIDtextBox.Text)));
             l.GetCourse();
-            l.AddStudentAndBetyg(s, betygtextBox.Text);
-            MessageBox.Show("Grade: " + betygtextBox.Text + "\nStudent: " + s.Name + "\nLab: " +l.Namn+"\nCourse: " + l.GetCourse().Name);
+            l.GradeStudent(s, betygtextBox.Text);
+            MessageBox.Show("Grade: " + betygtextBox.Text + "\nStudent: " + s.Name + "\nLab: " + l.Namn + "\nCourse: " + l.GetCourse().Name);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -60,9 +61,8 @@ namespace SchoolSystem
 
             foreach (var item in labs.FindAll(x => x.GetStudent().GetID().Equals(int.Parse(textBox3.Text))))
             {
-               listBox1.Items.Add( item.PrintInfo());
-            }              
-            
+                listBox1.Items.Add(item.PrintInfo());
+            }
         }
     }
 }

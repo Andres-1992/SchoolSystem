@@ -47,59 +47,59 @@ namespace SchoolSystem
                 listViewCourses.Items.Add(listView);
             }
         }
-
         private void addToCoursebutton_Click(object sender, EventArgs e)
         {
-
             if (!string.IsNullOrWhiteSpace(courseIDbox.Text))
             {
                 Course c = courses.Find(x => (x.GetID().Equals(int.Parse(courseIDbox.Text))));
                 if (checkBox1.Checked && !string.IsNullOrWhiteSpace(teacherIDbox.Text))
-                {                                      
-                        Teacher t = teachers.Find(x => (x.GetID().Equals(int.Parse(teacherIDbox.Text))));
-                        if (t == null || c == null)
-                        {
-                            MessageBox.Show("fel");
-                        }
-                        else
-                        {
-                            c.AddTeacherToCourse(t);
-                            MessageBox.Show("Teacher: " + t.Name + "\nWas added to course " + c.Name);
-                        }
-                        teacherIDbox.Clear();                    
+                {
+                    Teacher t = teachers.Find(x => (x.GetID().Equals(int.Parse(teacherIDbox.Text))));
+                    if (t == null || c == null)
+                    {
+                        MessageBox.Show("fel");
+                    }
+                    else
+                    {
+                        c.AddTeacher(t);
+                        t.AddCourse(c);
+                        MessageBox.Show("Teacher: " + t.Name + "\nWas added to course: " + c.Name);
+                    }
+                    teacherIDbox.Clear();
                 }
                 else if (checkBox1.Checked && string.IsNullOrEmpty(teacherIDbox.Text))
                 {
                     MessageBox.Show("Fill teacherID");
-                }               
-                    if (checkBox2.Checked && !string.IsNullOrWhiteSpace(studentIDbox.Text))
+                }
+                if (checkBox2.Checked && !string.IsNullOrWhiteSpace(studentIDbox.Text))
+                {
+                    Student s = students.Find(x => (x.GetID().Equals(int.Parse(studentIDbox.Text))));
+                    if (s == null || c == null)
                     {
-                        Student s = students.Find(x => (x.GetID().Equals(int.Parse(studentIDbox.Text))));
-                        if (s == null || c == null)
-                        {
-                            MessageBox.Show("fel");
-                        }
-                        else
-                        {
-                            c.AddStudentToCourse(s);
-                            MessageBox.Show("Student: " + s.Name + "\nWas added to course " + c.Name);
-                        }
-                        studentIDbox.Clear();
+                        MessageBox.Show("fel");
                     }
+                    else
+                    {
+                        c.AddStudent(s);
+                        s.AddCourse(c);
+                        MessageBox.Show("Student: " + s.Name + "\nWas added to course: " + c.Name);
+                    }
+                    studentIDbox.Clear();
+                }
 
                 else if (checkBox2.Checked && string.IsNullOrWhiteSpace(studentIDbox.Text))
                 {
                     MessageBox.Show("Fill StudentID");
                 }
-                else if (c== null)
-                {                    
-                       MessageBox.Show("Course ID: " + courseIDbox.Text+ " does not exist");
+                else if (c == null)
+                {
+                    MessageBox.Show("Course ID: " + courseIDbox.Text + " does not exist");
                 }
-            }  
+            }
             else
             {
                 MessageBox.Show("You havent done anything");
-            }        
+            }
 
         }
         private void deleteCoursebutton_Click(object sender, EventArgs e)
@@ -137,15 +137,15 @@ namespace SchoolSystem
             Course c = courses.Find(x => (x.GetID().Equals(int.Parse(cIDbox3.Text))));
             if (c != null)
             {
-                foreach (Student item in c.Getstudent())
+                foreach (Student item in c.GetStudents())
                 {
-                    allStudentsinCourse.Items.Add("Course : " + c.Name + "\tStudentname: " + item.Name);
+                    allStudentsinCourse.Items.Add("Course: " + c.Name + "\tStudentname: " + item.Name);
                 }
 
             }
-            else if (c==null)
+            else if (c == null)
             {
-                MessageBox.Show("StudentId: "+ cIDbox3.Text + " does not exist");
+                MessageBox.Show("StudentId: " + cIDbox3.Text + " does not exist");
             }
         }
 
@@ -157,12 +157,12 @@ namespace SchoolSystem
             {
                 foreach (Teacher item in c.GetTeachers())
                 {
-                    teacherTeaminCourse.Items.Add("Course : " + c.Name + "\t Teachername: " + item.Name);
+                    teacherTeaminCourse.Items.Add("Course: " + c.Name + "\t Teachername: " + item.Name);
                 }
             }
             else if (c == null)
             {
-                MessageBox.Show("Course ID: "+ cIDbox4.Text + " does not exist");
+                MessageBox.Show("Course ID: " + cIDbox4.Text + " does not exist");
             }
         }
 

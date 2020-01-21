@@ -77,7 +77,10 @@
     <Compile Include="Form5.Designer.cs">
       <DependentUpon>Form5.cs</DependentUpon>
     </Compile>
-    <Compile Include="IPerson.cs" />
+    <Compile Include="ICourse.cs" />
+    <Compile Include="ILab.cs" />
+    <Compile Include="IStudent.cs" />
+    <Compile Include="ITeacher.cs" />
     <Compile Include="Lab.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
